@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Book — RAYTR!X</title>
+  <meta name="description" content="Book Raytrix for your next event — festivals, clubs, weddings, private and corporate parties. Available worldwide." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+  <header class="nav">
+    <a href="index.html" class="nav__logo">RAYTR<span>!</span>X</a>
+    <nav class="nav__links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html" class="is-active">Book</a>
+    </nav>
+    <a href="contact.html" class="nav__cta">Book Now <span class="arrow"></span></a>
+    <button class="nav__burger" aria-label="Menu"><span></span></button>
+  </header>
+
+  <section class="section" style="padding-top: 180px;">
+    <div class="container">
+      <p class="eyebrow reveal">Bookings</p>
+      <h1 class="display reveal" style="font-size: clamp(64px, 12vw, 200px); margin-top: 12px;">
+        Let's <span style="color:var(--accent)">talk</span>.
+      </h1>
+      <p class="reveal" style="max-width: 60ch; color: var(--muted); margin-top: 24px;">
+        Tell us about your event. We reply to every enquiry within 48 hours.
+      </p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top: 40px;">
+    <div class="container">
+      <div class="contact-grid">
+        <!-- Booking form -->
+        <form id="bookingForm" class="form reveal-lines" novalidate>
+          <div class="row">
+            <div class="field">
+              <label for="name">Your Name</label>
+              <input id="name" name="name" type="text" required autocomplete="name" />
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" required autocomplete="email" />
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="field">
+              <label for="phone">Phone</label>
+              <input id="phone" name="phone" type="tel" autocomplete="tel" />
+            </div>
+            <div class="field">
+              <label for="eventType">Event Type</label>
+              <select id="eventType" name="eventType" required>
+                <option value="">Select…</option>
+                <option>Wedding / Sangeet</option>
+                <option>Private Party</option>
+                <option>Club Night</option>
+                <option>Festival</option>
+                <option>Corporate / Brand</option>
+                <option>Other</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="field">
+              <label for="date">Event Date</label>
+              <input id="date" name="date" type="date" />
+            </div>
+            <div class="field">
+              <label for="location">Location</label>
+              <input id="location" name="location" type="text" placeholder="City, Country" />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="budget">Budget Range</label>
+            <select id="budget" name="budget">
+              <option value="">Select…</option>
+              <option>Under $2,000</option>
+              <option>$2,000 – $5,000</option>
+              <option>$5,000 – $10,000</option>
+              <option>$10,000+</option>
+              <option>Prefer to discuss</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="message">Tell us about the event</label>
+            <textarea id="message" name="message" required placeholder="Vibe, expected guests, venue, set length…"></textarea>
+          </div>
+
+          <div>
+            <button type="submit" class="btn">Send Enquiry <span class="arrow"></span></button>
+          </div>
+
+          <p class="msg">Opening your mail app to complete the enquiry. If it doesn't open, email <a href="mailto:raytrixofficial@gmail.com" style="color:var(--fg); text-decoration: underline;">raytrixofficial@gmail.com</a> directly.</p>
+        </form>
+
+        <!-- Contact card -->
+        <aside class="contact-card reveal">
+          <h3>Direct <span style="color:var(--accent)">contact</span></h3>
+
+          <a class="line" href="mailto:raytrixofficial@gmail.com">
+            <span class="lbl">Email</span>
+            <span>raytrixofficial@gmail.com</span>
+          </a>
+          <a class="line" href="tel:+17787231624">
+            <span class="lbl">Phone</span>
+            <span>+1 778 723 1624</span>
+          </a>
+          <a class="line" href="https://www.instagram.com/raytrixofficial/" target="_blank" rel="noopener">
+            <span class="lbl">Instagram</span>
+            <span>@raytrixofficial</span>
+          </a>
+
+          <div style="margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--line);">
+            <p class="eyebrow" style="margin-bottom: 10px;">Based</p>
+            <p style="margin: 0;">Vancouver, BC · Canada</p>
+          </div>
+
+          <div style="margin-top: 24px;">
+            <p class="eyebrow" style="margin-bottom: 10px;">Response</p>
+            <p style="margin: 0; color: var(--muted);">Within 48 hours, seven days a week.</p>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer" style="margin-top: 60px;">
+    <div class="footer__grid">
+      <div class="footer__brand">RAYTR<span class="accent">!</span>X</div>
+      <div>
+        <h5>Explore</h5>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Book</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="mailto:raytrixofficial@gmail.com">raytrixofficial@gmail.com</a></li>
+          <li><a href="tel:+17787231624">+1 778 723 1624</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Follow</h5>
+        <ul>
+          <li><a href="https://www.instagram.com/raytrixofficial/" target="_blank" rel="noopener">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© <span id="yr">2026</span> Raytrix. All rights reserved.</span>
+      <span>Vancouver, CA · Available worldwide</span>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+  <script>document.getElementById("yr").textContent = new Date().getFullYear();</script>
+</body>
+</html>
