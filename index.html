@@ -3,77 +3,108 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>RAYTR!X — DJ & Producer</title>
-  <meta name="description" content="Raytrix (Sagar Gamre) is an internationally-touring DJ and producer. Bollywood, hip-hop, and open-format sets for clubs, festivals, weddings and private events." />
+  <title>RAYTR!X — DJ / Producer / Instructor</title>
+  <meta name="description" content="Raytrix (Sagar Gamre) is an internationally-touring DJ and producer. Bollywood, hip-hop and open-format sets for clubs, festivals, weddings and celebrity events." />
 
-  <meta property="og:title" content="RAYTR!X — DJ & Producer" />
-  <meta property="og:description" content="Internationally-touring DJ. Bollywood, hip-hop, open format. Book Raytrix worldwide." />
+  <meta property="og:title" content="RAYTR!X — DJ / Producer / Instructor" />
+  <meta property="og:description" content="Bollywood, hip-hop, open format. Vancouver-based, available worldwide." />
   <meta property="og:type" content="website" />
 
+  <link rel="icon" type="image/svg+xml" href="assets/img/logo.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,400..700,0..100;1,9..144,400..700,0..100&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
 
   <header class="nav">
-    <a href="index.html" class="nav__logo">RAYTR<span>!</span>X</a>
-    <nav class="nav__links">
+    <a href="index.html" class="nav__logo" aria-label="Raytrix — Home">
+      <img src="assets/img/logo.svg" alt="RAYTR!X" />
+    </a>
+    <nav class="nav__links" role="navigation" aria-label="Primary">
       <a href="index.html" class="is-active">Home</a>
       <a href="about.html">About</a>
       <a href="gallery.html">Gallery</a>
       <a href="contact.html">Book</a>
     </nav>
-    <a href="contact.html" class="nav__cta">Book Now <span class="arrow"></span></a>
-    <button class="nav__burger" aria-label="Menu"><span></span></button>
+    <a href="contact.html" class="nav__cta"><span class="dot"></span> Available for booking</a>
+    <button class="nav__burger" aria-label="Menu"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
   </header>
 
   <!-- HERO -->
   <section class="hero">
-    <div class="hero__bg"></div>
-    <div class="hero__scrim"></div>
+    <div class="hero__lead reveal-lines">
+      <span class="hero__eyebrow"><span class="status"></span> Vancouver · Available worldwide</span>
 
-    <div class="container" style="width:100%">
-      <p class="eyebrow reveal">DJ / Producer / Instructor</p>
-      <h1 class="hero__wordmark reveal">
-        RAYTR<span class="accent">!</span>X
+      <h1 class="hero__title">
+        <span class="row1">Sound with</span>
+        <span class="row2"><span class="swash">altitude</span>.</span>
       </h1>
 
-      <div class="hero__meta reveal-lines">
-        <p class="tagline">A decade behind the decks. Bollywood, hip-hop, open format — from Mumbai's KITTY SU to Vancouver's biggest stages.</p>
-        <div class="rhs">
-          <p class="eyebrow">Based in Vancouver, CA</p>
-          <p class="eyebrow">Available worldwide</p>
-        </div>
+      <div class="hero__foot">
+        <p>A decade behind the decks — Bollywood, hip-hop, open format — from Mumbai's KITTY SU to the biggest stages in Vancouver.</p>
+        <a href="contact.html" class="btn">Book Raytrix <span class="arr"></span></a>
       </div>
     </div>
 
-    <span class="hero__scroll">Scroll</span>
+    <div class="hero__media reveal">
+      <div class="hero__portrait">
+        <!-- TODO: replace with real hero portrait (portrait orientation, min 1200×1500) -->
+        <div class="tile tile--v" style="--r: 4/5; height: 100%; width: 100%;">Portrait</div>
+      </div>
+
+      <div class="badge-disc" aria-hidden="true">
+        <svg viewBox="0 0 200 200">
+          <defs>
+            <path id="circlePath" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0" />
+          </defs>
+          <text font-family="Space Grotesk, sans-serif" font-size="14" letter-spacing="4" fill="#fff" text-transform="uppercase">
+            <textPath href="#circlePath" startOffset="0">BOOKINGS OPEN · SPRING '26 · BOOKINGS OPEN · SPRING '26 · </textPath>
+          </text>
+        </svg>
+        <span class="pin">✳</span>
+      </div>
+    </div>
+
+    <span class="hero__scroll">Scroll <span class="down"></span></span>
   </section>
 
-  <!-- MARQUEE -->
-  <section class="marquee" aria-hidden="true">
+  <!-- MARQUEE 1 -->
+  <section class="marquee marquee--ink" aria-hidden="true">
     <div class="marquee__track">
-      <span>Peggy Gou</span><span>Nastia</span><span>Martin Roth</span><span>Thomas Gold</span><span>EDX</span><span>Danny Avila</span><span>Tujamo</span><span>Dirtcaps</span><span>Tavi Castro</span>
-      <span>Peggy Gou</span><span>Nastia</span><span>Martin Roth</span><span>Thomas Gold</span><span>EDX</span><span>Danny Avila</span><span>Tujamo</span><span>Dirtcaps</span><span>Tavi Castro</span>
+      <span>Bollywood</span><span class="dot"></span>
+      <span>Hip-Hop</span><span class="dot"></span>
+      <span>Open Format</span><span class="dot"></span>
+      <span>Weddings</span><span class="dot"></span>
+      <span>Clubs</span><span class="dot"></span>
+      <span>Festivals</span><span class="dot"></span>
+      <span>Private Events</span><span class="dot"></span>
+      <span>Bollywood</span><span class="dot"></span>
+      <span>Hip-Hop</span><span class="dot"></span>
+      <span>Open Format</span><span class="dot"></span>
+      <span>Weddings</span><span class="dot"></span>
+      <span>Clubs</span><span class="dot"></span>
+      <span>Festivals</span><span class="dot"></span>
+      <span>Private Events</span><span class="dot"></span>
     </div>
   </section>
 
   <!-- INTRO / SPLIT -->
   <section class="section">
     <div class="container">
-      <div class="split">
-        <div class="split__media reveal">
-          <!-- TODO: replace with a hero portrait -->
-          <div class="tile-placeholder" style="--ratio: 4/5; aspect-ratio: 4/5;">Portrait</div>
+      <div class="split split--rev">
+        <div class="body reveal-lines">
+          <span class="eyebrow">Meet the artist</span>
+          <h2 class="h-md mt-1"><em>Sagar Gamre</em>. Raytrix on stage.</h2>
+          <p class="mt-2">Ten years in and Raytrix still reads a room like a first draft — from low-key and sophisticated to full-blown floor energy in a single set. He's won 12 DJ competitions along the way, held a six-year residency at Mumbai's legendary KITTY SU, and was ranked among the Top 100 DJs of India in 2019.</p>
+          <p>Today he calls Vancouver home, where he's become the city's most in-demand Bollywood DJ, and mentors the next generation at the Tabletutors DJ Community.</p>
+          <p class="mt-2"><a href="about.html" class="underlined-link">Read the full story →</a></p>
         </div>
-        <div class="reveal-lines">
-          <p class="eyebrow">The Artist</p>
-          <h2>Sound with <span class="accent">altitude</span>.</h2>
-          <p>Sagar Gamre — better known as Raytrix — has spent more than a decade reading rooms and moving them. From resident nights at Mumbai's KITTY SU to headline sets across Europe and the UAE, his style shifts effortlessly between low-key sophistication and full-blown floor energy.</p>
-          <p>Today he calls Vancouver home, where he's become the city's most in-demand Bollywood DJ and mentors the next generation as a Tabletutors instructor.</p>
-          <p><a href="about.html" class="btn btn--ghost">Read the story <span class="arrow"></span></a></p>
+        <div class="split__media reveal">
+          <!-- TODO: replace with a portrait or on-stage shot -->
+          <div class="tile tile--c" style="--r: 4/5; height:100%; width:100%">Portrait</div>
         </div>
       </div>
     </div>
@@ -83,63 +114,138 @@
   <section class="section" style="padding-top:0;">
     <div class="container">
       <div class="stats reveal-lines">
-        <div><span class="num">10<span class="accent">+</span></span><span class="lbl">Years touring</span></div>
-        <div><span class="num">12</span><span class="lbl">DJ Competitions won</span></div>
-        <div><span class="num">6<span class="accent">+</span></span><span class="lbl">Countries played</span></div>
-        <div><span class="num">100</span><span class="lbl">Top DJs of India, 2019</span></div>
+        <div><div class="num">10<span class="swash">+</span></div><span class="lbl">Years touring</span></div>
+        <div><div class="num">12</div><span class="lbl">DJ competitions won</span></div>
+        <div><div class="num">6<span class="swash">+</span></div><span class="lbl">Countries played</span></div>
+        <div><div class="num">100</div><span class="lbl">Top DJs of India · 2019</span></div>
       </div>
     </div>
   </section>
 
-  <!-- FEATURES -->
+  <!-- WHAT HE DOES -->
+  <section class="section section--paper">
+    <div class="container">
+      <div class="section__head reveal-lines">
+        <div><span class="eyebrow">Services</span><h2 class="h-lg mt-1">What he <em>does</em>.</h2></div>
+        <div class="lead"><p>Club nights, festivals, weddings and celebrity parties. Raytrix delivers a set that fits the room and lifts it a floor higher.</p></div>
+      </div>
+
+      <div class="feature-row reveal-lines">
+        <article>
+          <span class="num">01</span>
+          <h3>Clubs & Festivals</h3>
+          <p>Open-format, hip-hop, house and Bollywood — headline and support sets across India, UAE and Europe.</p>
+        </article>
+        <article>
+          <span class="num">02</span>
+          <h3>Weddings & Private</h3>
+          <p>Curated, multi-generational sets for South Asian weddings, sangeets, receptions and destination events.</p>
+        </article>
+        <article>
+          <span class="num">03</span>
+          <h3>Celebrity Events</h3>
+          <p>Trusted by Bollywood — from Salman Khan and Karan Johar to Anurag Kashyap and Neil Nitin Mukesh.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE 2 — VERMILLION -->
+  <section class="marquee marquee--vermillion marquee--reverse" aria-hidden="true">
+    <div class="marquee__track">
+      <span>Peggy Gou</span><span class="dot"></span>
+      <span>Nastia</span><span class="dot"></span>
+      <span>Martin Roth</span><span class="dot"></span>
+      <span>Thomas Gold</span><span class="dot"></span>
+      <span>EDX</span><span class="dot"></span>
+      <span>Danny Avila</span><span class="dot"></span>
+      <span>Tujamo</span><span class="dot"></span>
+      <span>Dirtcaps</span><span class="dot"></span>
+      <span>Tavi Castro</span><span class="dot"></span>
+      <span>Peggy Gou</span><span class="dot"></span>
+      <span>Nastia</span><span class="dot"></span>
+      <span>Martin Roth</span><span class="dot"></span>
+      <span>Thomas Gold</span><span class="dot"></span>
+      <span>EDX</span><span class="dot"></span>
+      <span>Danny Avila</span><span class="dot"></span>
+      <span>Tujamo</span><span class="dot"></span>
+      <span>Dirtcaps</span><span class="dot"></span>
+      <span>Tavi Castro</span><span class="dot"></span>
+    </div>
+  </section>
+
+  <!-- LISTEN (placeholder for real mixes) -->
   <section class="section">
     <div class="container">
       <div class="section__head reveal-lines">
-        <h2>What he <span class="accent">does</span></h2>
-        <p>Club nights, festivals, weddings and celebrity parties — Raytrix delivers a set that fits the room and lifts it a floor higher.</p>
+        <div><span class="eyebrow">Listen</span><h2 class="h-lg mt-1"><em>Selected</em> sets.</h2></div>
+        <div class="lead"><p>Recent mixes and live recordings — drop SoundCloud, Mixcloud or Spotify embeds here when we get them.</p></div>
       </div>
-    </div>
-    <div class="features reveal-lines">
-      <div>
-        <h3>01</h3>
-        <p class="eyebrow" style="margin-top:14px;">Clubs & Festivals</p>
-        <p>Open-format, hip-hop, house and Bollywood — headline and support sets across India, UAE, and Europe.</p>
-      </div>
-      <div>
-        <h3>02</h3>
-        <p class="eyebrow" style="margin-top:14px;">Weddings & Private</p>
-        <p>Curated, multi-generational sets for South Asian weddings, sangeets, receptions and destination events.</p>
-      </div>
-      <div>
-        <h3>03</h3>
-        <p class="eyebrow" style="margin-top:14px;">Celebrity Bookings</p>
-        <p>Trusted by Bollywood — from Salman Khan and Karan Johar to Anurag Kashyap and Neil Nitin Mukesh.</p>
+
+      <div class="feature-row reveal-lines">
+        <article>
+          <span class="num">▶</span>
+          <h3>Sunset Rooftop</h3>
+          <p class="muted">Live · Vancouver · 2025</p>
+          <p class="mt-1">A warm, sun-down house set closing with Bollywood classics reworked for the floor.</p>
+        </article>
+        <article>
+          <span class="num">▶</span>
+          <h3>Wedding Reception</h3>
+          <p class="muted">Live · Whistler · 2025</p>
+          <p class="mt-1">Sangeet through reception — a genre-jumping journey built for a full multi-generational room.</p>
+        </article>
+        <article>
+          <span class="num">▶</span>
+          <h3>KITTY SU Throwback</h3>
+          <p class="muted">Live · Mumbai · 2022</p>
+          <p class="mt-1">Farewell residency set — hip-hop, house and open format at India's most iconic nightclub.</p>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- SECOND MARQUEE -->
-  <section class="marquee marquee--reverse" aria-hidden="true">
+  <!-- MARQUEE 3 -->
+  <section class="marquee" aria-hidden="true">
     <div class="marquee__track">
-      <span>Salman Khan</span><span>Karan Johar</span><span>Anurag Kashyap</span><span>Neil Nitin Mukesh</span><span>Kunal Khemu</span><span>Raj Kundra</span><span>Ayesha Jhulka</span><span>Karan Wahi</span>
-      <span>Salman Khan</span><span>Karan Johar</span><span>Anurag Kashyap</span><span>Neil Nitin Mukesh</span><span>Kunal Khemu</span><span>Raj Kundra</span><span>Ayesha Jhulka</span><span>Karan Wahi</span>
+      <span class="italic">Salman Khan</span><span class="dot"></span>
+      <span class="italic">Karan Johar</span><span class="dot"></span>
+      <span class="italic">Anurag Kashyap</span><span class="dot"></span>
+      <span class="italic">Neil Nitin Mukesh</span><span class="dot"></span>
+      <span class="italic">Kunal Khemu</span><span class="dot"></span>
+      <span class="italic">Raj Kundra</span><span class="dot"></span>
+      <span class="italic">Ayesha Jhulka</span><span class="dot"></span>
+      <span class="italic">Karan Wahi</span><span class="dot"></span>
+      <span class="italic">Salman Khan</span><span class="dot"></span>
+      <span class="italic">Karan Johar</span><span class="dot"></span>
+      <span class="italic">Anurag Kashyap</span><span class="dot"></span>
+      <span class="italic">Neil Nitin Mukesh</span><span class="dot"></span>
+      <span class="italic">Kunal Khemu</span><span class="dot"></span>
+      <span class="italic">Raj Kundra</span><span class="dot"></span>
+      <span class="italic">Ayesha Jhulka</span><span class="dot"></span>
+      <span class="italic">Karan Wahi</span><span class="dot"></span>
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="section" style="text-align:center;">
-    <div class="container reveal-lines">
-      <p class="eyebrow">Bookings & Enquiries</p>
-      <h2 class="display" style="font-size: clamp(56px, 10vw, 160px); margin: 20px 0 30px;">Let's make <span style="color:var(--accent)">noise</span>.</h2>
-      <p style="max-width: 52ch; margin: 0 auto 32px; color: var(--muted);">Weddings, clubs, festivals, brand launches, private events — reach out and Raytrix's team will get back within 48 hours.</p>
-      <a href="contact.html" class="btn">Book Raytrix <span class="arrow"></span></a>
+  <!-- RIBBON CTA -->
+  <section class="ribbon">
+    <div class="container center reveal-lines">
+      <span class="eyebrow" style="color:var(--paper);">Bookings & enquiries</span>
+      <h2 class="mt-1">Let's make <span class="swash">noise</span>.</h2>
+      <p class="mt-2" style="color:rgba(247,243,233,0.7); max-width: 52ch; margin-left:auto; margin-right:auto;">Weddings, clubs, festivals, brand launches, private events — reach out and Raytrix's team gets back within 48 hours.</p>
+      <a href="contact.html" class="btn">Enquire now <span class="arr"></span></a>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer class="footer">
+    <div class="footer__super">RAYTR<span class="swash">!</span>X</div>
+
     <div class="footer__grid">
-      <div class="footer__brand">RAYTR<span class="accent">!</span>X</div>
+      <div class="footer__intro">
+        <h5>Raytrix (Sagar Gamre)</h5>
+        <p>Vancouver-based DJ, producer and instructor. Bollywood, hip-hop, open format — available worldwide.</p>
+      </div>
       <div>
         <h5>Explore</h5>
         <ul>
@@ -160,7 +266,7 @@
         <h5>Follow</h5>
         <ul>
           <li><a href="https://www.instagram.com/raytrixofficial/" target="_blank" rel="noopener">Instagram</a></li>
-          <!-- TODO: add SoundCloud / Spotify / Mixcloud / YouTube links -->
+          <!-- TODO: add SoundCloud / Spotify / Mixcloud / YouTube -->
         </ul>
       </div>
     </div>

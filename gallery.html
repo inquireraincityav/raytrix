@@ -5,70 +5,78 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Gallery — RAYTR!X</title>
   <meta name="description" content="Photos from Raytrix's club nights, festivals, weddings and private events." />
+  <link rel="icon" type="image/svg+xml" href="assets/img/logo.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,400..700,0..100;1,9..144,400..700,0..100&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
 
   <header class="nav">
-    <a href="index.html" class="nav__logo">RAYTR<span>!</span>X</a>
-    <nav class="nav__links">
+    <a href="index.html" class="nav__logo" aria-label="Raytrix — Home">
+      <img src="assets/img/logo.svg" alt="RAYTR!X" />
+    </a>
+    <nav class="nav__links" role="navigation" aria-label="Primary">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="gallery.html" class="is-active">Gallery</a>
       <a href="contact.html">Book</a>
     </nav>
-    <a href="contact.html" class="nav__cta">Book Now <span class="arrow"></span></a>
-    <button class="nav__burger" aria-label="Menu"><span></span></button>
+    <a href="contact.html" class="nav__cta"><span class="dot"></span> Available for booking</a>
+    <button class="nav__burger" aria-label="Menu"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
   </header>
 
   <section class="section" style="padding-top: 180px;">
-    <div class="container">
-      <p class="eyebrow reveal">Gallery</p>
-      <h1 class="display reveal" style="font-size: clamp(64px, 12vw, 200px); margin-top: 12px;">
-        Behind the <span style="color:var(--accent)">decks</span>.
-      </h1>
-      <p class="reveal" style="max-width: 60ch; color: var(--muted); margin-top: 24px;">
-        Selected shots from clubs, festivals, weddings and celebrity events. Real portfolio images will drop into this grid — the tiles below hold their proportions.
+    <div class="container reveal-lines">
+      <span class="eyebrow">Gallery</span>
+      <h1 class="h-xl mt-1">Behind the <em>decks</em>.</h1>
+      <p class="mt-3 muted" style="max-width: 60ch; font-size: 18px;">
+        Selected shots from clubs, festivals, weddings and celebrity events. Real portfolio images drop straight into the grid — the tiles below hold their proportions.
       </p>
     </div>
   </section>
 
-  <section style="padding-bottom: 120px;">
+  <section style="padding: 40px var(--pad) 120px;">
     <!--
-      TODO: replace each tile-placeholder with an <img> once real photos are provided.
-      Example:
-      <figure><img src="assets/img/gallery/01.jpg" alt="Set at KITTY SU"/><figcaption>KITTY SU · Mumbai</figcaption></figure>
+      TODO: replace each <div class="tile"> with an <img>.
+      Example: <figure><img src="assets/img/gallery/01.jpg" alt="…"><figcaption>…</figcaption></figure>
     -->
-    <div class="gallery reveal">
-      <figure><div class="tile-placeholder" style="--ratio: 3/4;">01</div><figcaption>KITTY SU · Mumbai</figcaption></figure>
-      <figure><div class="tile-placeholder" style="--ratio: 1/1;">02</div><figcaption>Festival · Croatia</figcaption></figure>
-      <figure><div class="tile-placeholder" style="--ratio: 4/5;">03</div><figcaption>Wedding · Vancouver</figcaption></figure>
-      <figure><div class="tile-placeholder" style="--ratio: 3/4;">04</div><figcaption>Club Royalty · Mumbai</figcaption></figure>
-      <figure><div class="tile-placeholder" style="--ratio: 2/3;">05</div><figcaption>Private · Dubai</figcaption></figure>
-      <figure><div class="tile-placeholder" style="--ratio: 1/1;">06</div><figcaption>Studio session</figcaption></figure>
-      <figure><div class="tile-placeholder" style="--ratio: 4/5;">07</div><figcaption>Opening for Peggy Gou</figcaption></figure>
-      <figure><div class="tile-placeholder" style="--ratio: 3/4;">08</div><figcaption>Sangeet · Toronto</figcaption></figure>
-      <figure><div class="tile-placeholder" style="--ratio: 1/1;">09</div><figcaption>Rooftop · Barcelona</figcaption></figure>
-      <figure><div class="tile-placeholder" style="--ratio: 4/5;">10</div><figcaption>Amsterdam ADE</figcaption></figure>
-      <figure><div class="tile-placeholder" style="--ratio: 3/4;">11</div><figcaption>Bollywood night · Vancouver</figcaption></figure>
-      <figure><div class="tile-placeholder" style="--ratio: 2/3;">12</div><figcaption>Zurich club night</figcaption></figure>
+    <div class="container reveal">
+      <div class="gallery">
+        <figure><div class="tile tile--v" style="--r: 3/4;">01</div><figcaption>KITTY SU · Mumbai</figcaption></figure>
+        <figure><div class="tile tile--p" style="--r: 1/1;">02</div><figcaption>Festival · Croatia</figcaption></figure>
+        <figure><div class="tile tile--c" style="--r: 4/5;">03</div><figcaption>Wedding · Vancouver</figcaption></figure>
+        <figure><div class="tile tile--n" style="--r: 3/4;">04</div><figcaption>Club Royalty · Mumbai</figcaption></figure>
+        <figure><div class="tile tile--l" style="--r: 2/3;">05</div><figcaption>Private · Dubai</figcaption></figure>
+        <figure><div class="tile tile--v" style="--r: 1/1;">06</div><figcaption>Studio session</figcaption></figure>
+        <figure><div class="tile tile--p" style="--r: 4/5;">07</div><figcaption>Opening for Peggy Gou</figcaption></figure>
+        <figure><div class="tile tile--c" style="--r: 3/4;">08</div><figcaption>Sangeet · Toronto</figcaption></figure>
+        <figure><div class="tile tile--n" style="--r: 1/1;">09</div><figcaption>Rooftop · Barcelona</figcaption></figure>
+        <figure><div class="tile tile--v" style="--r: 4/5;">10</div><figcaption>Amsterdam ADE</figcaption></figure>
+        <figure><div class="tile tile--l" style="--r: 3/4;">11</div><figcaption>Bollywood night · Vancouver</figcaption></figure>
+        <figure><div class="tile tile--c" style="--r: 2/3;">12</div><figcaption>Zurich club night</figcaption></figure>
+      </div>
     </div>
   </section>
 
-  <section class="section" style="text-align:center; padding-top: 40px;">
-    <div class="container reveal-lines">
-      <h2 class="display" style="font-size: clamp(48px, 8vw, 128px);">Want the <span style="color:var(--accent)">full set?</span></h2>
-      <p style="max-width: 52ch; margin: 20px auto 32px; color: var(--muted);">Full EPK, videos and sample sets available on request.</p>
-      <a href="contact.html" class="btn">Request EPK <span class="arrow"></span></a>
+  <!-- RIBBON -->
+  <section class="ribbon">
+    <div class="container center reveal-lines">
+      <span class="eyebrow" style="color:var(--paper);">EPK</span>
+      <h2 class="mt-1">Want the <span class="swash">full set?</span></h2>
+      <p class="mt-2" style="color:rgba(247,243,233,0.7); max-width: 52ch; margin-left:auto; margin-right:auto;">Full press kit, high-res photos, sample sets and rider available on request.</p>
+      <a href="contact.html" class="btn">Request EPK <span class="arr"></span></a>
     </div>
   </section>
 
   <footer class="footer">
+    <div class="footer__super">RAYTR<span class="swash">!</span>X</div>
     <div class="footer__grid">
-      <div class="footer__brand">RAYTR<span class="accent">!</span>X</div>
+      <div class="footer__intro">
+        <h5>Raytrix (Sagar Gamre)</h5>
+        <p>Vancouver-based DJ, producer and instructor. Bollywood, hip-hop, open format — available worldwide.</p>
+      </div>
       <div>
         <h5>Explore</h5>
         <ul>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 120" role="img" aria-label="RAYTR!X">
+  <style>
+    .r { font-family: "Anton", "Impact", "Helvetica Neue", Arial, sans-serif;
+         font-weight: 900; font-size: 108px; letter-spacing: -1px; fill: #f7f3e9; }
+    .a { fill: #ff4a1c; }
+  </style>
+  <text x="0" y="96" class="r">RAYTR<tspan class="a">!</tspan>X</text>
+</svg>

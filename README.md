@@ -1,6 +1,6 @@
 # RAYTR!X — Website
 
-A dark, cinematic marketing site for DJ **Raytrix** (Sagar Gamre). Static HTML/CSS/JS — no build step, no framework, no dependencies.
+Static marketing site for DJ **Raytrix** (Sagar Gamre). Warm cream palette, editorial type (Fraunces + Space Grotesk), vermillion + cobalt accents. No build step, no framework, no dependencies.
 
 ## Structure
 
@@ -8,23 +8,21 @@ A dark, cinematic marketing site for DJ **Raytrix** (Sagar Gamre). Static HTML/C
 .
 ├── index.html        # Home
 ├── about.html        # Bio, timeline, tours, celebrity list
-├── gallery.html      # Photo grid (placeholder tiles)
+├── gallery.html      # Photo grid (placeholder tiles for now)
 ├── contact.html      # Booking form + contact card
 └── assets/
     ├── css/style.css
     ├── js/main.js
-    └── img/          # Drop real photos in here
+    └── img/
+        ├── logo.svg        # nav logo (dark-on-cream)  — REPLACE with client's actual logo
+        └── logo-light.svg  # optional light variant  — REPLACE if used
 ```
 
 ## Run locally
 
-Any static server works. Two easy options:
-
 ```bash
-# Python
 python3 -m http.server 8000
-
-# Node
+# or
 npx serve .
 ```
 
@@ -33,27 +31,26 @@ Then open http://localhost:8000.
 ## Deploy
 
 Because it's fully static, host anywhere:
-
-- **Netlify / Vercel** — drag-and-drop the folder, or connect the repo.
-- **GitHub Pages** — enable Pages on the branch, point at `/` (root).
-- **Cloudflare Pages** — connect the repo, no build command needed.
+- **Netlify / Vercel / Cloudflare Pages** — connect the repo, no build command needed.
+- **GitHub Pages** — enable Pages on the branch, root folder.
 
 ## Things to swap before launch
 
-- `assets/img/hero.jpg` — replace with a real hero portrait (referenced in `style.css` under `.hero__bg::after`).
-- `gallery.html` — swap each `<div class="tile-placeholder">…</div>` for `<img src="assets/img/gallery/xx.jpg" alt="…" />`. The `columns` layout will re-flow automatically.
-- `about.html` split-media — replace the placeholder with a portrait.
-- `index.html` footer "Follow" — add SoundCloud / Spotify / Mixcloud / YouTube links when we have them.
-- Contact form — currently uses a `mailto:` handoff. To capture enquiries server-side, point the `<form>` at [Formspree](https://formspree.io), [Basin](https://usebasin.com) or a Netlify Forms endpoint (add `netlify` attribute + honeypot).
+1. **Logo** — `assets/img/logo.svg` is a text placeholder. Save the real RAYTR!X logo (SVG preferred, transparent PNG works too) at `assets/img/logo.svg` and it drops straight into the nav on every page.
+2. **Hero portrait** — `index.html` and `about.html` reference a `<div class="tile">` placeholder. Swap each for an `<img src="assets/img/hero.jpg" alt="Raytrix" />` — portrait orientation, 1200 × 1500 or larger.
+3. **Gallery photos** — 12 placeholder tiles in `gallery.html`. Swap each `<div class="tile">…</div>` for `<img src="assets/img/gallery/xx.jpg" alt="…">` — the masonry layout re-flows automatically.
+4. **Music links** — footer "Follow" list on every page: add SoundCloud, Spotify, Mixcloud, YouTube. On the home page, the three "Selected sets" cards can be turned into real SoundCloud/Mixcloud embeds.
+5. **Booking form backend** — currently a `mailto:` handoff. To capture leads server-side, point the `<form>` at [Formspree](https://formspree.io), [Basin](https://usebasin.com) or Netlify Forms (add the `netlify` attribute + a honeypot).
 
 ## Design system
 
-- Type: **Anton** (display) + **Inter** (body) — Google Fonts.
-- Palette: `--bg #000`, `--fg #f5f5f5`, `--accent #ff2f4a`, `--muted #9a9a9a`.
-- Grain overlay via inline SVG (no image dependency).
+- Palette: `--cream #f2ede1`, `--paper #f7f3e9`, `--ink #0f0f10`, `--vermillion #ff4a1c`, `--cobalt #1a3fff`.
+- Type: **Fraunces** (variable serif — supports weight + italic + optical-size axes) for headings; **Space Grotesk** for body / UI.
+- Paper grain overlay via inline SVG (no external image).
 - Reveal-on-scroll via `IntersectionObserver` — respects `prefers-reduced-motion`.
-- Marquee tickers, parallax wordmark, mobile menu — all vanilla CSS/JS.
+- Rotating "Bookings Open" badge on the hero uses SVG `textPath` on a circle — no dependencies.
+- Marquee tickers alternate between cream, ink, and vermillion backgrounds to break up scroll rhythm.
 
 ## SEO / social
 
-Each page has a real `<title>` and `<meta name="description">`. `index.html` also carries `og:` tags. Add an `og:image` (1200×630) once we have hero art.
+Each page has a real `<title>` and `<meta name="description">`. `index.html` also carries `og:` tags. Add a 1200 × 630 `og:image` once we have the hero art.

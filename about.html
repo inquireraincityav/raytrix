@@ -5,182 +5,159 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>About — RAYTR!X</title>
   <meta name="description" content="The story of Raytrix — Sagar Gamre — from Mumbai club residencies to Vancouver's biggest Bollywood stages." />
+  <link rel="icon" type="image/svg+xml" href="assets/img/logo.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,400..700,0..100;1,9..144,400..700,0..100&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
 
   <header class="nav">
-    <a href="index.html" class="nav__logo">RAYTR<span>!</span>X</a>
-    <nav class="nav__links">
+    <a href="index.html" class="nav__logo" aria-label="Raytrix — Home">
+      <img src="assets/img/logo.svg" alt="RAYTR!X" />
+    </a>
+    <nav class="nav__links" role="navigation" aria-label="Primary">
       <a href="index.html">Home</a>
       <a href="about.html" class="is-active">About</a>
       <a href="gallery.html">Gallery</a>
       <a href="contact.html">Book</a>
     </nav>
-    <a href="contact.html" class="nav__cta">Book Now <span class="arrow"></span></a>
-    <button class="nav__burger" aria-label="Menu"><span></span></button>
+    <a href="contact.html" class="nav__cta"><span class="dot"></span> Available for booking</a>
+    <button class="nav__burger" aria-label="Menu"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
   </header>
 
-  <!-- INTRO -->
+  <!-- HERO -->
   <section class="section" style="padding-top: 180px;">
-    <div class="container">
-      <p class="eyebrow reveal">About</p>
-      <h1 class="display reveal" style="font-size: clamp(64px, 12vw, 200px); margin-top: 12px;">
-        Sagar Gamre.<br /><span style="color:var(--accent)">Raytrix</span> on stage.
-      </h1>
+    <div class="container reveal-lines">
+      <span class="eyebrow">About</span>
+      <h1 class="h-xl mt-1"><em>Sagar</em> Gamre.<br /><span class="italic" style="color:var(--vermillion)">Raytrix</span> on stage.</h1>
+      <p class="mt-3 muted" style="max-width: 60ch; font-size: 18px;">Born on November 16 in India. Ten years behind the decks, twelve DJ competitions won, a six-year residency at Mumbai's most iconic nightclub, and — most recently — the most-booked Bollywood DJ in Vancouver.</p>
     </div>
   </section>
 
-  <!-- STORY -->
-  <section class="section" style="padding-top: 0;">
+  <!-- BIO SPLIT -->
+  <section class="section" style="padding-top:0;">
     <div class="container">
       <div class="split">
         <div class="split__media reveal">
-          <!-- TODO: replace with Raytrix portrait -->
-          <div class="tile-placeholder" style="--ratio: 4/5; aspect-ratio: 4/5;">Portrait</div>
+          <!-- TODO: replace with a portrait or on-stage shot -->
+          <div class="tile tile--v" style="--r: 4/5; height:100%; width:100%">Portrait</div>
         </div>
-        <div class="reveal-lines">
-          <p class="eyebrow">Origin</p>
-          <p>Born on November 16 in India, Raytrix began spinning in 2005 for private gigs and never really put the headphones down. Over the next decade he built a reputation for reading a room with unusual precision — moving from low-key and sophisticated to upbeat and animated in a single set — and won 12 DJ competitions along the way.</p>
-          <p>In Mumbai, he became a fixture: Club ROYALTY in 2015, then a six-year residency at KITTY SU from 2016 to 2022 — one of India's most legendary nightclubs. In 2019, he was ranked among the Top 100 DJs of India.</p>
-          <p>He's opened for Peggy Gou, Nastia, Martin Roth, Thomas Gold, EDX, Danny Avila, Tujamo, Dirtcaps and Tavi Castro. He's played weddings and private parties for Salman Khan, Karan Johar, Anurag Kashyap, Neil Nitin Mukesh, Kunal Khemu, Raj Kundra, Ayesha Jhulka and Karan Wahi.</p>
-          <p>Today he calls Vancouver home. Within a year of moving to Canada he became the city's most in-demand Bollywood DJ, playing its biggest South-Asian events. When he's not on tour, he teaches the next generation as a DJ instructor at the Tabletutors DJ Community.</p>
+        <div class="body reveal-lines">
+          <span class="eyebrow">The story</span>
+          <h2 class="h-md mt-1">From <em>Mumbai</em> to Vancouver.</h2>
+          <p class="mt-2">Raytrix started spinning in 2005 for private gigs. His ear for a room quickly outgrew the format — over the next decade he built a reputation for reading a crowd with unusual precision, moving from low-key and sophisticated to upbeat and animated in a single set. Along the way he won 12 DJ competitions.</p>
+          <p>In Mumbai he became a fixture: <strong>Club ROYALTY</strong> in 2015, then a six-year run as <strong>Resident DJ at KITTY SU</strong> from 2016 to 2022 — one of India's most legendary nightclubs. In 2019, he was ranked among the <strong>Top 100 DJs of India</strong>.</p>
+          <p>He's opened for Peggy Gou, Nastia, Martin Roth, Thomas Gold, EDX, Danny Avila, Tujamo, Dirtcaps and Tavi Castro. And he's played weddings and private parties for Salman Khan, Karan Johar, Anurag Kashyap, Neil Nitin Mukesh, Kunal Khemu, Raj Kundra, Ayesha Jhulka and Karan Wahi.</p>
+          <p>Today he calls Vancouver home. Within a year of moving to Canada he became the city's most in-demand Bollywood DJ, playing its biggest South-Asian events. When he's not touring, he teaches the next generation as an instructor at the <strong>Tabletutors DJ Community</strong>.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CAREER TIMELINE -->
-  <section class="section">
+  <!-- TIMELINE -->
+  <section class="section section--paper">
     <div class="container">
       <div class="section__head reveal-lines">
-        <h2>Career <span class="accent">timeline</span></h2>
-        <p>A decade-and-change of residencies, opening slots, and stages across three continents.</p>
+        <div><span class="eyebrow">Career</span><h2 class="h-lg mt-1">A short <em>timeline</em>.</h2></div>
+        <div class="lead"><p>Residencies, opening slots and stages across three continents — from a first private gig in 2005 to a global booking calendar today.</p></div>
       </div>
 
       <ol class="timeline reveal-lines">
         <li>
           <span class="yr">2005</span>
-          <div>
-            <h4>First decks</h4>
-            <p>Started spinning for private gigs in India.</p>
-          </div>
+          <div><h4>First decks</h4><p>Started spinning for private gigs in India.</p></div>
+          <a class="go" href="#" aria-hidden="true"></a>
         </li>
         <li>
           <span class="yr">2015</span>
-          <div>
-            <h4>Club ROYALTY Mumbai</h4>
-            <p>Signed on as an associated DJ.</p>
-          </div>
+          <div><h4>Club ROYALTY · Mumbai</h4><p>Signed on as an associated DJ.</p></div>
+          <a class="go" href="#" aria-hidden="true"></a>
         </li>
         <li>
           <span class="yr">2016 — 2022</span>
-          <div>
-            <h4>Resident DJ, KITTY SU Mumbai</h4>
-            <p>Six-year residency at one of India's most iconic nightclubs.</p>
-          </div>
+          <div><h4>Resident DJ · KITTY SU Mumbai</h4><p>Six years at one of India's most iconic nightclubs.</p></div>
+          <a class="go" href="#" aria-hidden="true"></a>
         </li>
         <li>
           <span class="yr">2019</span>
-          <div>
-            <h4>Top 100 DJs of India</h4>
-            <p>Ranked among the country's most influential DJs.</p>
-          </div>
+          <div><h4>Top 100 DJs of India</h4><p>Ranked among the country's most influential DJs.</p></div>
+          <a class="go" href="#" aria-hidden="true"></a>
         </li>
         <li>
           <span class="yr">2023</span>
-          <div>
-            <h4>Vancouver, Canada</h4>
-            <p>Relocated to Canada; became the city's most-booked Bollywood DJ within a year.</p>
-          </div>
+          <div><h4>Vancouver, Canada</h4><p>Relocated to Canada; became the city's most-booked Bollywood DJ within a year.</p></div>
+          <a class="go" href="#" aria-hidden="true"></a>
         </li>
         <li>
           <span class="yr">Now</span>
-          <div>
-            <h4>Touring & Teaching</h4>
-            <p>International bookings; DJ instructor at Tabletutors DJ Community.</p>
-          </div>
+          <div><h4>Touring & teaching</h4><p>International bookings; DJ instructor at Tabletutors DJ Community.</p></div>
+          <a class="go" href="#" aria-hidden="true"></a>
         </li>
       </ol>
     </div>
   </section>
 
-  <!-- OPENING ACTS -->
-  <section class="section" style="padding-top:0;">
+  <!-- SHARED THE STAGE -->
+  <section class="section">
     <div class="container">
       <div class="section__head reveal-lines">
-        <h2>Shared the <span class="accent">stage</span></h2>
-        <p>Opening acts and supporting sets for internationally-touring artists.</p>
+        <div><span class="eyebrow">Opening acts</span><h2 class="h-lg mt-1">Shared the <em>stage</em>.</h2></div>
+        <div class="lead"><p>Opening and supporting sets for internationally-touring artists.</p></div>
       </div>
       <div class="tags reveal">
-        <span>Peggy Gou</span>
-        <span>Nastia</span>
-        <span>Martin Roth</span>
-        <span>Thomas Gold</span>
-        <span>EDX</span>
-        <span>Danny Avila</span>
-        <span>Tujamo</span>
-        <span>Dirtcaps</span>
-        <span>Tavi Castro</span>
+        <span>Peggy Gou</span><span>Nastia</span><span>Martin Roth</span><span>Thomas Gold</span>
+        <span>EDX</span><span>Danny Avila</span><span>Tujamo</span><span>Dirtcaps</span><span>Tavi Castro</span>
       </div>
     </div>
   </section>
 
-  <!-- INTERNATIONAL -->
+  <!-- WORLDWIDE -->
   <section class="section" style="padding-top:0;">
     <div class="container">
       <div class="section__head reveal-lines">
-        <h2>Played <span class="accent">worldwide</span></h2>
-        <p>Regular international touring across Europe, the UAE and North America.</p>
+        <div><span class="eyebrow">International</span><h2 class="h-lg mt-1">Played <em>worldwide</em>.</h2></div>
+        <div class="lead"><p>Regular touring across Europe, the Middle East and North America.</p></div>
       </div>
       <div class="tags reveal">
-        <span>India</span>
-        <span>UAE</span>
-        <span>Spain</span>
-        <span>Austria</span>
-        <span>Croatia</span>
-        <span>Switzerland</span>
-        <span>Netherlands</span>
-        <span>Canada</span>
+        <span>India</span><span>UAE</span><span>Spain</span><span>Austria</span>
+        <span>Croatia</span><span>Switzerland</span><span>Netherlands</span><span>Canada</span>
       </div>
     </div>
   </section>
 
-  <!-- CELEBRITY PARTIES -->
-  <section class="section" style="padding-top:0;">
+  <!-- CELEBRITY -->
+  <section class="section section--paper">
     <div class="container">
       <div class="section__head reveal-lines">
-        <h2>Celebrity <span class="accent">parties</span></h2>
-        <p>Weddings, birthdays and private Bollywood events.</p>
+        <div><span class="eyebrow">Trusted by</span><h2 class="h-lg mt-1">Celebrity <em>parties</em>.</h2></div>
+        <div class="lead"><p>Weddings, birthdays and private Bollywood events.</p></div>
       </div>
       <div class="tags reveal">
-        <span>Salman Khan</span>
-        <span>Karan Johar</span>
-        <span>Anurag Kashyap</span>
-        <span>Neil Nitin Mukesh</span>
-        <span>Kunal Khemu</span>
-        <span>Raj Kundra</span>
-        <span>Ayesha Jhulka</span>
-        <span>Karan Wahi</span>
+        <span>Salman Khan</span><span>Karan Johar</span><span>Anurag Kashyap</span><span>Neil Nitin Mukesh</span>
+        <span>Kunal Khemu</span><span>Raj Kundra</span><span>Ayesha Jhulka</span><span>Karan Wahi</span>
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="section" style="text-align:center;">
-    <div class="container reveal-lines">
-      <h2 class="display" style="font-size: clamp(48px, 8vw, 128px);">Book <span style="color:var(--accent)">Raytrix</span></h2>
-      <p style="max-width: 52ch; margin: 20px auto 32px; color: var(--muted);">For festivals, clubs, weddings, private and corporate events.</p>
-      <a href="contact.html" class="btn">Enquire <span class="arrow"></span></a>
+  <!-- RIBBON -->
+  <section class="ribbon">
+    <div class="container center reveal-lines">
+      <span class="eyebrow" style="color:var(--paper);">Book Raytrix</span>
+      <h2 class="mt-1">Let's <span class="swash">talk</span>.</h2>
+      <p class="mt-2" style="color:rgba(247,243,233,0.7); max-width: 52ch; margin-left:auto; margin-right:auto;">Weddings, festivals, clubs, brand launches, private events — worldwide.</p>
+      <a href="contact.html" class="btn">Enquire <span class="arr"></span></a>
     </div>
   </section>
 
   <footer class="footer">
+    <div class="footer__super">RAYTR<span class="swash">!</span>X</div>
     <div class="footer__grid">
-      <div class="footer__brand">RAYTR<span class="accent">!</span>X</div>
+      <div class="footer__intro">
+        <h5>Raytrix (Sagar Gamre)</h5>
+        <p>Vancouver-based DJ, producer and instructor. Bollywood, hip-hop, open format — available worldwide.</p>
+      </div>
       <div>
         <h5>Explore</h5>
         <ul>
