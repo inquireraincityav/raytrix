@@ -1,5 +1,5 @@
 // RAYTR!X — global behaviors
-// Nav scroll state, mobile menu, IntersectionObserver reveals, booking form.
+// Nav scroll state, mobile menu, IntersectionObserver reveals, video lightbox, booking form.
 
 (function () {
   const nav = document.querySelector(".nav");
@@ -32,8 +32,47 @@
   );
   document.querySelectorAll(".reveal, .reveal-lines").forEach((el) => io.observe(el));
 
-  // Booking form → mailto handoff. Swap to a real endpoint (Formspree, Basin,
-  // Netlify Forms) when we're ready to capture leads server-side.
+  // -------- VIDEO LIGHTBOX --------
+  // Any element with [data-video="url.mp4"], [data-youtube="ID"] or [data-vimeo="ID"]
+  // opens a full-screen player. Escape / backdrop click / X closes.
+  let lb = document.querySelector(".lightbox");
+  if (!lb) {
+    lb = document.createElement("div");
+    lb.className = "lightbox";
+    lb.innerHTML = '<div class="lightbox__frame"></div><button class="lightbox__close" aria-label="Close"></button>';
+    document.body.appendChild(lb);
+  }
+  const frame = lb.querySelector(".lightbox__frame");
+  const closeBtn = lb.querySelector(".lightbox__close");
+
+  const openLightbox = (html) => {
+    frame.innerHTML = html;
+    lb.classList.add("is-open");
+    document.body.classList.add("lightbox-open");
+  };
+  const closeLightbox = () => {
+    lb.classList.remove("is-open");
+    document.body.classList.remove("lightbox-open");
+    setTimeout(() => { frame.innerHTML = ""; }, 400);
+  };
+
+  closeBtn.addEventListener("click", closeLightbox);
+  lb.addEventListener("click", (e) => { if (e.target === lb) closeLightbox(); });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeLightbox(); });
+
+  document.addEventListener("click", (e) => {
+    const trigger = e.target.closest("[data-video], [data-youtube], [data-vimeo]");
+    if (!trigger) return;
+    e.preventDefault();
+    const src = trigger.dataset.video;
+    const yt  = trigger.dataset.youtube;
+    const vim = trigger.dataset.vimeo;
+    if (src) openLightbox(`<video src="${src}" controls autoplay playsinline></video>`);
+    else if (yt) openLightbox(`<iframe src="https://www.youtube.com/embed/${yt}?autoplay=1&rel=0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>`);
+    else if (vim) openLightbox(`<iframe src="https://player.vimeo.com/video/${vim}?autoplay=1" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>`);
+  });
+
+  // -------- BOOKING FORM (mailto handoff) --------
   const form = document.querySelector("#bookingForm");
   if (form) {
     form.addEventListener("submit", (e) => {

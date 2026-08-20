@@ -843,3 +843,209 @@ body.menu-open .nav__burger .bar:nth-child(3) { transform: translateY(-6.6px) ro
 .center { text-align: center; }
 .mt-1 { margin-top: 12px; } .mt-2 { margin-top: 24px; } .mt-3 { margin-top: 40px; }
 .dot-lg { display: inline-block; width: 14px; height: 14px; border-radius: 50%; background: var(--vermillion); vertical-align: middle; margin: 0 6px; }
+
+/* =========================================================
+   VIDEO SUPPORT — reel section, video grid, lightbox
+   ========================================================= */
+
+/* Hero video background (opt-in — add .hero--video on the <section>) */
+.hero--video .hero__portrait video,
+.hero--video .hero__portrait img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Big featured reel */
+.reel {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--ink);
+  cursor: pointer;
+  isolation: isolate;
+  box-shadow: 0 30px 60px -30px rgba(0,0,0,0.35);
+}
+.reel img,
+.reel video {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.9s var(--ease), filter 0.5s var(--ease);
+}
+.reel:hover img,
+.reel:hover video { transform: scale(1.04); filter: brightness(0.85); }
+.reel__overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 32px;
+  color: #fff;
+  z-index: 2;
+  background: linear-gradient(180deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0) 40%, rgba(0,0,0,0.6) 100%);
+  pointer-events: none;
+}
+.reel__title {
+  font-family: var(--font-serif);
+  font-size: clamp(24px, 3vw, 40px);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.reel__meta { font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; opacity: 0.75; margin-top: 6px; display: block; }
+
+/* Play button — used on reel, video grid, gallery video items */
+.play-btn {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 88px; height: 88px;
+  border-radius: 50%;
+  background: var(--paper);
+  color: var(--ink);
+  display: grid;
+  place-items: center;
+  z-index: 3;
+  transition: transform 0.35s var(--ease), background 0.3s var(--ease), color 0.3s var(--ease);
+  box-shadow: 0 20px 40px -20px rgba(0,0,0,0.5);
+}
+.play-btn::before {
+  content: "";
+  width: 0; height: 0;
+  border-left: 18px solid currentColor;
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+  margin-left: 6px;
+}
+.reel:hover .play-btn,
+.video-card:hover .play-btn,
+.gallery figure:hover .play-btn {
+  transform: translate(-50%, -50%) scale(1.08);
+  background: var(--vermillion);
+  color: #fff;
+}
+.play-btn--sm { width: 56px; height: 56px; }
+.play-btn--sm::before { border-left-width: 12px; border-top-width: 8px; border-bottom-width: 8px; margin-left: 4px; }
+
+/* Video card grid — used on home "Selected Sets" section */
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.video-card {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--ink);
+  cursor: pointer;
+  isolation: isolate;
+  color: #fff;
+}
+.video-card img,
+.video-card video {
+  position: absolute;
+  inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s var(--ease), filter 0.5s var(--ease);
+}
+.video-card:hover img,
+.video-card:hover video { transform: scale(1.06); filter: brightness(0.8); }
+.video-card__body {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  padding: 24px;
+  z-index: 2;
+  background: linear-gradient(180deg, transparent, rgba(0,0,0,0.75));
+  pointer-events: none;
+}
+.video-card__body h3 {
+  font-family: var(--font-serif);
+  font-size: clamp(20px, 2vw, 28px);
+  line-height: 1.05;
+  color: #fff;
+  margin: 0 0 4px;
+}
+.video-card__body .meta { font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; opacity: 0.75; }
+@media (max-width: 800px) { .video-grid { grid-template-columns: 1fr; } }
+
+/* Gallery items marked as video */
+.gallery figure.is-video { cursor: pointer; }
+.gallery figure.is-video::after {
+  content: "▶";
+  position: absolute;
+  top: 14px; right: 14px;
+  z-index: 3;
+  width: 34px; height: 34px;
+  border-radius: 50%;
+  background: rgba(15,15,16,0.7);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  font-size: 11px;
+  padding-left: 3px;
+  backdrop-filter: blur(6px);
+}
+
+/* -------- Lightbox -------- */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(10, 10, 12, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(20px, 5vw, 60px);
+  opacity: 0;
+  transition: opacity 0.35s var(--ease);
+}
+.lightbox.is-open { display: flex; opacity: 1; }
+.lightbox__frame {
+  position: relative;
+  width: min(1200px, 100%);
+  aspect-ratio: 16 / 9;
+  background: #000;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 40px 80px -20px rgba(0,0,0,0.6);
+  transform: scale(0.96);
+  transition: transform 0.4s var(--ease);
+}
+.lightbox.is-open .lightbox__frame { transform: none; }
+.lightbox__frame video,
+.lightbox__frame iframe {
+  width: 100%; height: 100%;
+  border: none;
+  display: block;
+}
+.lightbox__close {
+  position: absolute;
+  top: 20px; right: 20px;
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: rgba(247,243,233,0.15);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  z-index: 2;
+  transition: background 0.25s var(--ease), transform 0.25s var(--ease);
+  backdrop-filter: blur(8px);
+}
+.lightbox__close:hover { background: var(--vermillion); transform: rotate(90deg); }
+.lightbox__close::before,
+.lightbox__close::after {
+  content: "";
+  position: absolute;
+  width: 18px; height: 1.5px;
+  background: currentColor;
+}
+.lightbox__close::before { transform: rotate(45deg); }
+.lightbox__close::after  { transform: rotate(-45deg); }
+body.lightbox-open { overflow: hidden; }

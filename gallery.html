@@ -37,23 +37,42 @@
     </div>
   </section>
 
+  <!-- FEATURED REEL -->
+  <section class="section" style="padding-top: 40px;">
+    <div class="container">
+      <div class="reel reveal" data-video="assets/video/reel.mp4">
+        <div class="tile tile--n" style="--r: 16/9; height:100%; width:100%;">Reel</div>
+        <button class="play-btn" aria-label="Play reel"></button>
+        <div class="reel__overlay">
+          <div>
+            <div class="reel__title">2025 Highlight Reel</div>
+            <span class="reel__meta">02:14 · Clubs · Weddings · Festivals</span>
+          </div>
+          <span class="reel__meta">▶ Play</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section style="padding: 40px var(--pad) 120px;">
     <!--
-      TODO: replace each <div class="tile"> with an <img>.
-      Example: <figure><img src="assets/img/gallery/01.jpg" alt="…"><figcaption>…</figcaption></figure>
+      Mixed grid — photos + videos.
+      Photo:    <figure><img src="assets/img/gallery/01.jpg" alt="…"><figcaption>…</figcaption></figure>
+      Video:    <figure class="is-video" data-video="assets/video/xx.mp4"><img src="assets/img/gallery/xx-poster.jpg" alt="…"><figcaption>…</figcaption></figure>
+      YouTube:  <figure class="is-video" data-youtube="VIDEO_ID">…</figure>
     -->
     <div class="container reveal">
       <div class="gallery">
         <figure><div class="tile tile--v" style="--r: 3/4;">01</div><figcaption>KITTY SU · Mumbai</figcaption></figure>
-        <figure><div class="tile tile--p" style="--r: 1/1;">02</div><figcaption>Festival · Croatia</figcaption></figure>
+        <figure class="is-video" data-video="assets/video/festival.mp4"><div class="tile tile--n" style="--r: 16/9;">Video</div><figcaption>Festival · Croatia</figcaption></figure>
         <figure><div class="tile tile--c" style="--r: 4/5;">03</div><figcaption>Wedding · Vancouver</figcaption></figure>
         <figure><div class="tile tile--n" style="--r: 3/4;">04</div><figcaption>Club Royalty · Mumbai</figcaption></figure>
-        <figure><div class="tile tile--l" style="--r: 2/3;">05</div><figcaption>Private · Dubai</figcaption></figure>
-        <figure><div class="tile tile--v" style="--r: 1/1;">06</div><figcaption>Studio session</figcaption></figure>
+        <figure class="is-video" data-youtube="REPLACE_WITH_YT_ID"><div class="tile tile--v" style="--r: 16/9;">Video</div><figcaption>Private · Dubai</figcaption></figure>
+        <figure><div class="tile tile--l" style="--r: 1/1;">06</div><figcaption>Studio session</figcaption></figure>
         <figure><div class="tile tile--p" style="--r: 4/5;">07</div><figcaption>Opening for Peggy Gou</figcaption></figure>
-        <figure><div class="tile tile--c" style="--r: 3/4;">08</div><figcaption>Sangeet · Toronto</figcaption></figure>
+        <figure class="is-video" data-video="assets/video/sangeet.mp4"><div class="tile tile--c" style="--r: 16/9;">Video</div><figcaption>Sangeet · Toronto</figcaption></figure>
         <figure><div class="tile tile--n" style="--r: 1/1;">09</div><figcaption>Rooftop · Barcelona</figcaption></figure>
-        <figure><div class="tile tile--v" style="--r: 4/5;">10</div><figcaption>Amsterdam ADE</figcaption></figure>
+        <figure class="is-video" data-vimeo="REPLACE_WITH_VIMEO_ID"><div class="tile tile--v" style="--r: 16/9;">Video</div><figcaption>Amsterdam ADE</figcaption></figure>
         <figure><div class="tile tile--l" style="--r: 3/4;">11</div><figcaption>Bollywood night · Vancouver</figcaption></figure>
         <figure><div class="tile tile--c" style="--r: 2/3;">12</div><figcaption>Zurich club night</figcaption></figure>
       </div>

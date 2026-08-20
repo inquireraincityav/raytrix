@@ -174,34 +174,73 @@
     </div>
   </section>
 
-  <!-- LISTEN (placeholder for real mixes) -->
+  <!-- FEATURED REEL -->
   <section class="section">
     <div class="container">
       <div class="section__head reveal-lines">
-        <div><span class="eyebrow">Listen</span><h2 class="h-lg mt-1"><em>Selected</em> sets.</h2></div>
-        <div class="lead"><p>Recent mixes and live recordings — drop SoundCloud, Mixcloud or Spotify embeds here when we get them.</p></div>
+        <div><span class="eyebrow">Watch</span><h2 class="h-lg mt-1">The <em>reel</em>.</h2></div>
+        <div class="lead"><p>A two-minute cut of live sets, crowds and the club floors he's owned. Click to play.</p></div>
       </div>
 
-      <div class="feature-row reveal-lines">
-        <article>
-          <span class="num">▶</span>
-          <h3>Sunset Rooftop</h3>
-          <p class="muted">Live · Vancouver · 2025</p>
-          <p class="mt-1">A warm, sun-down house set closing with Bollywood classics reworked for the floor.</p>
+      <!--
+        TODO: swap the <div class="tile"> poster for a real poster image:
+          <img src="assets/img/reel-poster.jpg" alt="Raytrix live reel">
+        Then point data-video (or data-youtube / data-vimeo) at the actual video.
+      -->
+      <div class="reel reveal" data-video="assets/video/reel.mp4">
+        <div class="tile tile--n" style="--r: 16/9; height: 100%; width: 100%;">Reel</div>
+        <button class="play-btn" aria-label="Play reel"></button>
+        <div class="reel__overlay">
+          <div>
+            <div class="reel__title">Raytrix — Live 2025</div>
+            <span class="reel__meta">02:14 · Highlights</span>
+          </div>
+          <span class="reel__meta">▶ Play</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PERFORMANCE VIDEOS -->
+  <section class="section" style="padding-top: 0;">
+    <div class="container">
+      <div class="section__head reveal-lines">
+        <div><span class="eyebrow">Performances</span><h2 class="h-lg mt-1"><em>Selected</em> sets.</h2></div>
+        <div class="lead">
+          <p>Recent live recordings — click any card to open. Wire the real files to <code>data-video</code>, <code>data-youtube</code>, or <code>data-vimeo</code>.</p>
+        </div>
+      </div>
+
+      <div class="video-grid reveal-lines">
+        <article class="video-card" data-youtube="REPLACE_WITH_YT_ID">
+          <div class="tile tile--v" style="--r: 4/5;">Video</div>
+          <button class="play-btn play-btn--sm" aria-label="Play"></button>
+          <div class="video-card__body">
+            <h3>Sunset Rooftop</h3>
+            <span class="meta">Live · Vancouver · 2025</span>
+          </div>
         </article>
-        <article>
-          <span class="num">▶</span>
-          <h3>Wedding Reception</h3>
-          <p class="muted">Live · Whistler · 2025</p>
-          <p class="mt-1">Sangeet through reception — a genre-jumping journey built for a full multi-generational room.</p>
+        <article class="video-card" data-video="assets/video/wedding.mp4">
+          <div class="tile tile--c" style="--r: 4/5;">Video</div>
+          <button class="play-btn play-btn--sm" aria-label="Play"></button>
+          <div class="video-card__body">
+            <h3>Wedding Reception</h3>
+            <span class="meta">Live · Whistler · 2025</span>
+          </div>
         </article>
-        <article>
-          <span class="num">▶</span>
-          <h3>KITTY SU Throwback</h3>
-          <p class="muted">Live · Mumbai · 2022</p>
-          <p class="mt-1">Farewell residency set — hip-hop, house and open format at India's most iconic nightclub.</p>
+        <article class="video-card" data-video="assets/video/kittysu.mp4">
+          <div class="tile tile--n" style="--r: 4/5;">Video</div>
+          <button class="play-btn play-btn--sm" aria-label="Play"></button>
+          <div class="video-card__body">
+            <h3>KITTY SU Throwback</h3>
+            <span class="meta">Live · Mumbai · 2022</span>
+          </div>
         </article>
       </div>
+
+      <p class="mt-3 muted" style="text-align:center;">
+        <a href="gallery.html" class="underlined-link">See more in the gallery →</a>
+      </p>
     </div>
   </section>
 
