@@ -1,30 +1,8 @@
 // RAYTR!X — global behaviors
-// Theme toggle, nav scroll state, fullscreen menu, IntersectionObserver
-// reveals, video lightbox (MP4 / YouTube / Vimeo), booking form.
+// Nav scroll state, fullscreen menu, IntersectionObserver reveals,
+// video lightbox (MP4 / YouTube / Vimeo), booking form.
 
 (function () {
-  // -------- THEME TOGGLE (light default, dark opt-in, persisted) --------
-  // Anti-FOUC note: each page also has a tiny inline <script> in <head>
-  // (before this file loads) that applies the saved theme before first
-  // paint. This block just wires up the button and keeps it in sync.
-  const root = document.documentElement;
-  const themeBtn = document.querySelector(".nav__theme");
-  const applyThemeLabel = () => {
-    if (!themeBtn) return;
-    const isDark = root.getAttribute("data-theme") === "dark";
-    themeBtn.setAttribute("aria-label", isDark ? "Switch to light mode" : "Switch to dark mode");
-  };
-  applyThemeLabel();
-  if (themeBtn) {
-    themeBtn.addEventListener("click", () => {
-      const next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
-      if (next === "dark") root.setAttribute("data-theme", "dark");
-      else root.removeAttribute("data-theme");
-      try { localStorage.setItem("raytrix-theme", next); } catch (e) {}
-      applyThemeLabel();
-    });
-  }
-
   // -------- NAV SCROLL STATE --------
   const nav = document.querySelector(".nav");
   const onScroll = () => nav && nav.classList.toggle("scrolled", window.scrollY > 20);

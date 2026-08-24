@@ -10,16 +10,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
 
-  <script>
-    (function () {
-      try {
-        if (localStorage.getItem("raytrix-theme") === "dark") {
-          document.documentElement.setAttribute("data-theme", "dark");
-        }
-      } catch (e) {}
-    })();
-  </script>
-
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
@@ -44,15 +34,6 @@
     </a>
     <div class="nav__right">
       <a href="contact.html" class="nav__pill">Book <span class="arr"></span></a>
-      <button class="nav__theme" aria-label="Switch to dark mode" title="Toggle theme">
-        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="12" cy="12" r="4.5"/>
-          <path d="M12 2.5v2.5M12 19v2.5M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M2.5 12H5M19 12h2.5M4.6 19.4l1.8-1.8M17.6 6.4l1.8-1.8"/>
-        </svg>
-        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.8 6.8 0 0 0 10.5 10.5z"/>
-        </svg>
-      </button>
       <button class="nav__menu" aria-label="Open menu">
         <span class="label label-open">Menu</span>
         <span class="label label-close">Close</span>

@@ -1,6 +1,6 @@
 # RAYTR!X — Website
 
-Static marketing site for DJ **Raytrix** (Sagar Gamre). Warm cream palette, editorial type (Fraunces + Space Grotesk), vermillion + cobalt accents. No build step, no framework, no dependencies.
+Static marketing site for DJ **Raytrix** (Sagar Gamre). Dark, cinematic DJ-industry design (video-first hero, editorial type in Space Grotesk + Inter, red accent) with Indian/Bollywood design touches — a jali lattice pattern and marigold-gold detailing. No build step, no framework, no dependencies.
 
 ## Structure
 
@@ -101,12 +101,14 @@ Add `.hero--video` on the `<section class="hero">` so the sizing rules kick in.
 
 ## Design system
 
-- Palette: `--cream #f2ede1`, `--paper #f7f3e9`, `--ink #0f0f10`, `--vermillion #ff4a1c`, `--cobalt #1a3fff`.
-- Type: **Fraunces** (variable serif — supports weight + italic + optical-size axes) for headings; **Space Grotesk** for body / UI.
-- Paper grain overlay via inline SVG (no external image).
+- Palette: `--bg #000`, `--elev #0d0d0f`, `--fg #fafafa`, `--accent #ff3a2d` (vermillion red), `--gold #d9a441` (marigold gold — Indian/Bollywood accent). Dark only, no light mode.
+- Type: **Space Grotesk** for display/headings; **Inter** for body / UI.
+- Film-grain overlay via inline SVG (no external image).
 - Reveal-on-scroll via `IntersectionObserver` — respects `prefers-reduced-motion`.
-- Rotating "Bookings Open" badge on the hero uses SVG `textPath` on a circle — no dependencies.
-- Marquee tickers alternate between cream, ink, and vermillion backgrounds to break up scroll rhythm.
+- Nav is transparent over the hero video and solidifies to a blurred pill once scrolled.
+- Featured Show section uses a jali lattice pattern (Indo-Islamic pierced-stone motif) in gold as a background texture.
+- Music cards reveal a vinyl record with a gold label behind the cover art on hover, plus a play button.
+- Marquee tickers scroll continuously to break up section rhythm.
 
 ## SEO / social
 

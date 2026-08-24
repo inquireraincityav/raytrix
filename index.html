@@ -14,17 +14,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
 
-  <script>
-    /* Anti-FOUC: apply the saved theme before first paint. Defaults to light. */
-    (function () {
-      try {
-        if (localStorage.getItem("raytrix-theme") === "dark") {
-          document.documentElement.setAttribute("data-theme", "dark");
-        }
-      } catch (e) {}
-    })();
-  </script>
-
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
@@ -49,15 +38,6 @@
     </a>
     <div class="nav__right">
       <a href="contact.html" class="nav__pill">Book <span class="arr"></span></a>
-      <button class="nav__theme" aria-label="Switch to dark mode" title="Toggle theme">
-        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="12" cy="12" r="4.5"/>
-          <path d="M12 2.5v2.5M12 19v2.5M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M2.5 12H5M19 12h2.5M4.6 19.4l1.8-1.8M17.6 6.4l1.8-1.8"/>
-        </svg>
-        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.8 6.8 0 0 0 10.5 10.5z"/>
-        </svg>
-      </button>
       <button class="nav__menu" aria-label="Open menu">
         <span class="label label-open">Menu</span>
         <span class="label label-close">Close</span>
@@ -123,8 +103,6 @@
 
     <h1 class="hero__mark"><svg class="logo-mark logo-mark--hero" viewBox="0 0 525 100" aria-label="RAYTR!X"><use href="#raytrix-mark"/></svg></h1>
 
-    <button class="hero__play" data-video="assets/video/reel.mp4" aria-label="Play reel"></button>
-
     <button class="hero__sound" aria-label="Unmute" title="Sound">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
         <path d="M4 9 h4 l5 -4 v14 l-5 -4 H4 z"/>
@@ -153,7 +131,7 @@
     <div class="hero-intro__grid reveal-lines">
       <div>
         <span class="eyebrow eyebrow--dot">Sagar Gamre · Raytrix</span>
-        <h2 class="hero-intro__title mt-3">Bollywood.<br>Hip-Hop.<br><span class="accent">Open Format.</span></h2>
+        <h2 class="hero-intro__title mt-3">10<span class="accent">+</span><span class="hero-intro__title-sub">Years behind the decks</span></h2>
       </div>
       <div>
         <p class="hero-intro__meta">A decade behind the decks — from Mumbai's <strong>KITTY SU</strong> residency to headline sets across Europe, UAE and North America. Now Vancouver's most-booked Bollywood DJ, and touring worldwide.</p>
@@ -191,24 +169,6 @@
     </div>
   </section>
 
-  <!-- STATUS STRIP — one slim line, no duplication with Music / Tour Dates below -->
-  <section class="status-strip reveal">
-    <div class="container status-strip__row">
-      <a class="status-strip__item" href="contact.html">
-        <span class="eyebrow eyebrow--dot">Now booking</span>
-        <span class="status-strip__val">2026 season</span>
-      </a>
-      <a class="status-strip__item" href="gallery.html">
-        <span class="eyebrow">Residency</span>
-        <span class="status-strip__val">Fortune Sound · Every Friday</span>
-      </a>
-      <a class="status-strip__item" href="gallery.html">
-        <span class="eyebrow">New release</span>
-        <span class="status-strip__val">Vancouver Nights (Remix)</span>
-      </a>
-    </div>
-  </section>
-
   <!-- MUSIC -->
   <section class="section">
     <div class="container">
@@ -220,25 +180,37 @@
         <a href="#" class="more">All releases</a>
       </div>
 
-      <!-- TODO: point each Listen link at the real Spotify/SoundCloud/Apple Music track -->
+      <!-- TODO: point each card at the real Spotify/SoundCloud/Apple Music track -->
       <div class="music-row reveal-lines">
         <article class="music-card">
-          <div class="music-card__art"><div class="tile tile--r" style="--r: 1/1;">Cover</div></div>
+          <span class="music-card__num">01</span>
+          <a href="#" class="music-card__art">
+            <div class="music-card__vinyl"></div>
+            <div class="music-card__cover"><div class="tile tile--r" style="--r: 1/1;">Cover</div></div>
+            <span class="music-card__play" aria-hidden="true"></span>
+          </a>
           <h3 class="music-card__title">Bombay Fire</h3>
           <div class="music-card__meta">Raytrix · Original Mix · 2025</div>
-          <a href="#" class="music-card__listen">Listen</a>
         </article>
         <article class="music-card">
-          <div class="music-card__art"><div class="tile tile--b" style="--r: 1/1;">Cover</div></div>
+          <span class="music-card__num">02</span>
+          <a href="#" class="music-card__art">
+            <div class="music-card__vinyl"></div>
+            <div class="music-card__cover"><div class="tile tile--b" style="--r: 1/1;">Cover</div></div>
+            <span class="music-card__play" aria-hidden="true"></span>
+          </a>
           <h3 class="music-card__title">Vancouver Nights</h3>
           <div class="music-card__meta">Raytrix · Remix · 2025</div>
-          <a href="#" class="music-card__listen">Listen</a>
         </article>
         <article class="music-card">
-          <div class="music-card__art"><div class="tile tile--v" style="--r: 1/1;">Cover</div></div>
+          <span class="music-card__num">03</span>
+          <a href="#" class="music-card__art">
+            <div class="music-card__vinyl"></div>
+            <div class="music-card__cover"><div class="tile tile--v" style="--r: 1/1;">Cover</div></div>
+            <span class="music-card__play" aria-hidden="true"></span>
+          </a>
           <h3 class="music-card__title">KITTY SU Sunrise</h3>
           <div class="music-card__meta">Raytrix · Live Edit · 2024</div>
-          <a href="#" class="music-card__listen">Listen</a>
         </article>
       </div>
     </div>
