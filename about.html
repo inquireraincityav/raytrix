@@ -4,107 +4,149 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>About — RAYTR!X</title>
-  <meta name="description" content="The story of Raytrix — Sagar Gamre — from Mumbai club residencies to Vancouver's biggest Bollywood stages." />
-  <link rel="icon" type="image/svg+xml" href="assets/img/logo.svg" />
+  <meta name="description" content="Sagar Gamre, known as Raytrix — a decade behind the decks, from a six-year residency at Mumbai's KITTY SU to Vancouver's most-booked Bollywood DJ." />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,400..700,0..100;1,9..144,400..700,0..100&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <script>
+    (function () {
+      try {
+        if (localStorage.getItem("raytrix-theme") === "dark") {
+          document.documentElement.setAttribute("data-theme", "dark");
+        }
+      } catch (e) {}
+    })();
+  </script>
+
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
 
+  <!-- SVG logo defined once, referenced everywhere via <use href="#raytrix-mark"/> -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+    <symbol id="raytrix-mark" viewBox="0 0 525 100" fill="currentColor">
+      <path fill-rule="evenodd" d="M0,0 L55,0 L75,20 L75,40 L55,55 L75,100 L48,100 L28,65 L20,65 L20,100 L0,100 Z M20,20 L20,45 L47,45 L55,37 L55,28 L47,20 Z"/>
+      <path fill-rule="evenodd" d="M83,100 L113,0 L133,0 L163,100 L143,100 L138,82 L108,82 L103,100 Z M115,72 L131,72 L123,28 Z"/>
+      <circle cx="123" cy="61" r="5.5"/>
+      <path d="M171,0 L191,0 L209,42 L226,0 L246,0 L219,58 L219,100 L199,100 L199,58 Z"/>
+      <path d="M254,0 L329,0 L329,20 L302,20 L302,100 L282,100 L282,20 L254,20 Z"/>
+      <path fill-rule="evenodd" d="M337,0 L392,0 L412,20 L412,40 L392,55 L412,100 L385,100 L365,65 L357,65 L357,100 L337,100 Z M357,20 L357,45 L384,45 L392,37 L392,28 L384,20 Z"/>
+      <path d="M420,0 L442,0 L442,65 L420,65 Z M420,78 L442,78 L442,100 L420,100 Z"/>
+      <path d="M450,0 L470,0 L487,30 L505,0 L525,0 L500,50 L525,100 L505,100 L487,70 L470,100 L450,100 L474,50 Z"/>
+    </symbol>
+  </svg>
+
   <header class="nav">
     <a href="index.html" class="nav__logo" aria-label="Raytrix — Home">
-      <img src="assets/img/logo.svg" alt="RAYTR!X" />
+      <svg class="logo-mark logo-mark--nav" viewBox="0 0 525 100" aria-hidden="true"><use href="#raytrix-mark"/></svg>
     </a>
-    <nav class="nav__links" role="navigation" aria-label="Primary">
-      <a href="index.html">Home</a>
-      <a href="about.html" class="is-active">About</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="contact.html">Book</a>
-    </nav>
-    <a href="contact.html" class="nav__cta"><span class="dot"></span> Available for booking</a>
-    <button class="nav__burger" aria-label="Menu"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
+    <div class="nav__right">
+      <a href="contact.html" class="nav__pill">Book <span class="arr"></span></a>
+      <button class="nav__theme" aria-label="Switch to dark mode" title="Toggle theme">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="4.5"/>
+          <path d="M12 2.5v2.5M12 19v2.5M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M2.5 12H5M19 12h2.5M4.6 19.4l1.8-1.8M17.6 6.4l1.8-1.8"/>
+        </svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.8 6.8 0 0 0 10.5 10.5z"/>
+        </svg>
+      </button>
+      <button class="nav__menu" aria-label="Open menu">
+        <span class="label label-open">Menu</span>
+        <span class="label label-close">Close</span>
+        <span class="glyph" aria-hidden="true"></span>
+      </button>
+    </div>
   </header>
 
-  <!-- HERO -->
-  <section class="section" style="padding-top: 180px;">
+  <div class="menu-overlay" role="dialog" aria-modal="true" aria-label="Site menu">
+    <figure class="menu-overlay__photo">
+      <div class="tile tile--n" style="--r: 3/4;">Portrait</div>
+      <figcaption class="menu-overlay__caption">
+        <span class="p">Raytrix · Live 2025</span>
+        <span>Vancouver</span>
+      </figcaption>
+    </figure>
+
+    <nav class="menu-overlay__nav">
+      <a href="index.html" class="menu-item">
+        <span class="menu-item__num">I</span>
+        <span class="menu-item__label">Home</span>
+        <span class="menu-item__sub"></span>
+      </a>
+      <a href="about.html" class="menu-item is-active">
+        <span class="menu-item__num">II</span>
+        <span class="menu-item__label">About</span>
+        <span class="menu-item__sub">The story</span>
+      </a>
+      <a href="gallery.html" class="menu-item">
+        <span class="menu-item__num">III</span>
+        <span class="menu-item__label">Gallery</span>
+        <span class="menu-item__sub">Photos &amp; video</span>
+      </a>
+      <a href="contact.html" class="menu-item">
+        <span class="menu-item__num">IV</span>
+        <span class="menu-item__label">Book</span>
+        <span class="menu-item__sub">Enquire now</span>
+      </a>
+    </nav>
+
+    <div class="menu-overlay__foot">
+      <span>Vancouver · Worldwide</span>
+      <div class="menu-overlay__socials">
+        <a href="https://www.instagram.com/raytrixofficial/" target="_blank" rel="noopener">Instagram</a>
+        <a href="mailto:raytrixofficial@gmail.com">Email</a>
+        <a href="tel:+17787231624">+1 778 723 1624</a>
+      </div>
+    </div>
+  </div>
+
+  <section class="page-hero">
     <div class="container reveal-lines">
       <span class="eyebrow">About</span>
-      <h1 class="h-xl mt-1"><em>Sagar</em> Gamre.<br /><span class="italic" style="color:var(--vermillion)">Raytrix</span> on stage.</h1>
-      <p class="mt-3 muted" style="max-width: 60ch; font-size: 18px;">Born on November 16 in India. Ten years behind the decks, twelve DJ competitions won, a six-year residency at Mumbai's most iconic nightclub, and — most recently — the most-booked Bollywood DJ in Vancouver.</p>
+      <h1 class="display h-xxl mt-2">Sagar<br>Gamre.</h1>
+      <p class="body-lg mt-3">Born November 16 in India. Ten years behind the decks, twelve DJ competitions won, a six-year residency at Mumbai's most iconic nightclub — and, most recently, the most-booked Bollywood DJ in Vancouver.</p>
     </div>
   </section>
 
-  <!-- BIO SPLIT -->
   <section class="section" style="padding-top:0;">
     <div class="container">
       <div class="split">
-        <div class="split__media reveal">
-          <!-- TODO: replace with a portrait or on-stage shot -->
-          <div class="tile tile--v" style="--r: 4/5; height:100%; width:100%">Portrait</div>
-        </div>
+        <div class="split__media reveal"><div class="tile tile--n" style="--r: 4/5;">Portrait</div></div>
         <div class="body reveal-lines">
-          <span class="eyebrow">The story</span>
-          <h2 class="h-md mt-1">From <em>Mumbai</em> to Vancouver.</h2>
+          <span class="eyebrow">The Story</span>
+          <h2 class="h-md mt-1">From Mumbai to Vancouver.</h2>
           <p class="mt-2">Raytrix started spinning in 2005 for private gigs. His ear for a room quickly outgrew the format — over the next decade he built a reputation for reading a crowd with unusual precision, moving from low-key and sophisticated to upbeat and animated in a single set. Along the way he won 12 DJ competitions.</p>
-          <p>In Mumbai he became a fixture: <strong>Club ROYALTY</strong> in 2015, then a six-year run as <strong>Resident DJ at KITTY SU</strong> from 2016 to 2022 — one of India's most legendary nightclubs. In 2019, he was ranked among the <strong>Top 100 DJs of India</strong>.</p>
-          <p>He's opened for Peggy Gou, Nastia, Martin Roth, Thomas Gold, EDX, Danny Avila, Tujamo, Dirtcaps and Tavi Castro. And he's played weddings and private parties for Salman Khan, Karan Johar, Anurag Kashyap, Neil Nitin Mukesh, Kunal Khemu, Raj Kundra, Ayesha Jhulka and Karan Wahi.</p>
-          <p>Today he calls Vancouver home. Within a year of moving to Canada he became the city's most in-demand Bollywood DJ, playing its biggest South-Asian events. When he's not touring, he teaches the next generation as an instructor at the <strong>Tabletutors DJ Community</strong>.</p>
+          <p>In Mumbai he became a fixture: <strong style="color:var(--fg);">Club ROYALTY</strong> in 2015, then a six-year run as <strong style="color:var(--fg);">Resident DJ at KITTY SU</strong> from 2016 to 2022 — one of India's most legendary nightclubs. In 2019, he was ranked among the <strong style="color:var(--fg);">Top 100 DJs of India</strong>.</p>
+          <p>He's opened for Peggy Gou, Nastia, Martin Roth, Thomas Gold, EDX, Danny Avila, Tujamo, Dirtcaps and Tavi Castro. And played weddings and private parties for Salman Khan, Karan Johar, Anurag Kashyap, Neil Nitin Mukesh, Kunal Khemu, Raj Kundra, Ayesha Jhulka and Karan Wahi.</p>
+          <p>Today he calls Vancouver home. Within a year of relocating to Canada he became the city's most in-demand Bollywood DJ. When he's not touring, he teaches at the <strong style="color:var(--fg);">Tabletutors DJ Community</strong>.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- TIMELINE -->
-  <section class="section section--paper">
+  <section class="section">
     <div class="container">
       <div class="section__head reveal-lines">
-        <div><span class="eyebrow">Career</span><h2 class="h-lg mt-1">A short <em>timeline</em>.</h2></div>
-        <div class="lead"><p>Residencies, opening slots and stages across three continents — from a first private gig in 2005 to a global booking calendar today.</p></div>
+        <div><span class="eyebrow">Career</span><h2 class="h-lg mt-1">Timeline</h2></div>
       </div>
-
       <ol class="timeline reveal-lines">
-        <li>
-          <span class="yr">2005</span>
-          <div><h4>First decks</h4><p>Started spinning for private gigs in India.</p></div>
-          <a class="go" href="#" aria-hidden="true"></a>
-        </li>
-        <li>
-          <span class="yr">2015</span>
-          <div><h4>Club ROYALTY · Mumbai</h4><p>Signed on as an associated DJ.</p></div>
-          <a class="go" href="#" aria-hidden="true"></a>
-        </li>
-        <li>
-          <span class="yr">2016 — 2022</span>
-          <div><h4>Resident DJ · KITTY SU Mumbai</h4><p>Six years at one of India's most iconic nightclubs.</p></div>
-          <a class="go" href="#" aria-hidden="true"></a>
-        </li>
-        <li>
-          <span class="yr">2019</span>
-          <div><h4>Top 100 DJs of India</h4><p>Ranked among the country's most influential DJs.</p></div>
-          <a class="go" href="#" aria-hidden="true"></a>
-        </li>
-        <li>
-          <span class="yr">2023</span>
-          <div><h4>Vancouver, Canada</h4><p>Relocated to Canada; became the city's most-booked Bollywood DJ within a year.</p></div>
-          <a class="go" href="#" aria-hidden="true"></a>
-        </li>
-        <li>
-          <span class="yr">Now</span>
-          <div><h4>Touring & teaching</h4><p>International bookings; DJ instructor at Tabletutors DJ Community.</p></div>
-          <a class="go" href="#" aria-hidden="true"></a>
-        </li>
+        <li><span class="yr">2005</span><div><h4>First Decks</h4><p>Started spinning for private gigs in India.</p></div><span class="go" aria-hidden="true"></span></li>
+        <li><span class="yr">2015</span><div><h4>Club ROYALTY · Mumbai</h4><p>Signed on as an associated DJ.</p></div><span class="go" aria-hidden="true"></span></li>
+        <li><span class="yr">2016 — 2022</span><div><h4>Resident · KITTY SU Mumbai</h4><p>Six years at one of India's most iconic nightclubs.</p></div><span class="go" aria-hidden="true"></span></li>
+        <li><span class="yr">2019</span><div><h4>Top 100 DJs · India</h4><p>Ranked among the country's most influential DJs.</p></div><span class="go" aria-hidden="true"></span></li>
+        <li><span class="yr">2023</span><div><h4>Vancouver, Canada</h4><p>Relocated; became the city's most-booked Bollywood DJ within a year.</p></div><span class="go" aria-hidden="true"></span></li>
+        <li><span class="yr">Now</span><div><h4>Touring &amp; Teaching</h4><p>International bookings; DJ instructor at Tabletutors DJ Community.</p></div><span class="go" aria-hidden="true"></span></li>
       </ol>
     </div>
   </section>
 
-  <!-- SHARED THE STAGE -->
   <section class="section">
     <div class="container">
       <div class="section__head reveal-lines">
-        <div><span class="eyebrow">Opening acts</span><h2 class="h-lg mt-1">Shared the <em>stage</em>.</h2></div>
-        <div class="lead"><p>Opening and supporting sets for internationally-touring artists.</p></div>
+        <div><span class="eyebrow">Opening Acts</span><h2 class="h-lg mt-1">Shared The Stage</h2></div>
       </div>
       <div class="tags reveal">
         <span>Peggy Gou</span><span>Nastia</span><span>Martin Roth</span><span>Thomas Gold</span>
@@ -113,12 +155,10 @@
     </div>
   </section>
 
-  <!-- WORLDWIDE -->
   <section class="section" style="padding-top:0;">
     <div class="container">
       <div class="section__head reveal-lines">
-        <div><span class="eyebrow">International</span><h2 class="h-lg mt-1">Played <em>worldwide</em>.</h2></div>
-        <div class="lead"><p>Regular touring across Europe, the Middle East and North America.</p></div>
+        <div><span class="eyebrow">International</span><h2 class="h-lg mt-1">Played Worldwide</h2></div>
       </div>
       <div class="tags reveal">
         <span>India</span><span>UAE</span><span>Spain</span><span>Austria</span>
@@ -127,12 +167,10 @@
     </div>
   </section>
 
-  <!-- CELEBRITY -->
-  <section class="section section--paper">
+  <section class="section" style="padding-top:0;">
     <div class="container">
       <div class="section__head reveal-lines">
-        <div><span class="eyebrow">Trusted by</span><h2 class="h-lg mt-1">Celebrity <em>parties</em>.</h2></div>
-        <div class="lead"><p>Weddings, birthdays and private Bollywood events.</p></div>
+        <div><span class="eyebrow">Trusted By</span><h2 class="h-lg mt-1">Celebrity Parties</h2></div>
       </div>
       <div class="tags reveal">
         <span>Salman Khan</span><span>Karan Johar</span><span>Anurag Kashyap</span><span>Neil Nitin Mukesh</span>
@@ -141,18 +179,16 @@
     </div>
   </section>
 
-  <!-- RIBBON -->
-  <section class="ribbon">
-    <div class="container center reveal-lines">
-      <span class="eyebrow" style="color:var(--paper);">Book Raytrix</span>
-      <h2 class="mt-1">Let's <span class="swash">talk</span>.</h2>
-      <p class="mt-2" style="color:rgba(247,243,233,0.7); max-width: 52ch; margin-left:auto; margin-right:auto;">Weddings, festivals, clubs, brand launches, private events — worldwide.</p>
-      <a href="contact.html" class="btn">Enquire <span class="arr"></span></a>
+  <section class="cta-block">
+    <div class="container reveal-lines">
+      <span class="eyebrow eyebrow--dot" style="justify-content:center;">Bookings open</span>
+      <h2 class="display mt-2">Let's<br><span class="accent">Talk.</span></h2>
+      <a href="contact.html" class="btn mt-3">Enquire <span class="arr"></span></a>
     </div>
   </section>
 
   <footer class="footer">
-    <div class="footer__super">RAYTR<span class="swash">!</span>X</div>
+    <div class="footer__super" aria-hidden="true"><svg class="logo-mark logo-mark--footer" viewBox="0 0 525 100"><use href="#raytrix-mark"/></svg></div>
     <div class="footer__grid">
       <div class="footer__intro">
         <h5>Raytrix (Sagar Gamre)</h5>
@@ -188,6 +224,5 @@
   </footer>
 
   <script src="assets/js/main.js" defer></script>
-  <script>document.getElementById("yr").textContent = new Date().getFullYear();</script>
 </body>
 </html>

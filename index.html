@@ -10,189 +10,303 @@
   <meta property="og:description" content="Bollywood, hip-hop, open format. Vancouver-based, available worldwide." />
   <meta property="og:type" content="website" />
 
-  <link rel="icon" type="image/svg+xml" href="assets/img/logo.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,400..700,0..100;1,9..144,400..700,0..100&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <script>
+    /* Anti-FOUC: apply the saved theme before first paint. Defaults to light. */
+    (function () {
+      try {
+        if (localStorage.getItem("raytrix-theme") === "dark") {
+          document.documentElement.setAttribute("data-theme", "dark");
+        }
+      } catch (e) {}
+    })();
+  </script>
 
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
 
+  <!-- SVG logo defined once, referenced everywhere via <use href="#raytrix-mark"/> -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+    <symbol id="raytrix-mark" viewBox="0 0 525 100" fill="currentColor">
+      <path fill-rule="evenodd" d="M0,0 L55,0 L75,20 L75,40 L55,55 L75,100 L48,100 L28,65 L20,65 L20,100 L0,100 Z M20,20 L20,45 L47,45 L55,37 L55,28 L47,20 Z"/>
+      <path fill-rule="evenodd" d="M83,100 L113,0 L133,0 L163,100 L143,100 L138,82 L108,82 L103,100 Z M115,72 L131,72 L123,28 Z"/>
+      <circle cx="123" cy="61" r="5.5"/>
+      <path d="M171,0 L191,0 L209,42 L226,0 L246,0 L219,58 L219,100 L199,100 L199,58 Z"/>
+      <path d="M254,0 L329,0 L329,20 L302,20 L302,100 L282,100 L282,20 L254,20 Z"/>
+      <path fill-rule="evenodd" d="M337,0 L392,0 L412,20 L412,40 L392,55 L412,100 L385,100 L365,65 L357,65 L357,100 L337,100 Z M357,20 L357,45 L384,45 L392,37 L392,28 L384,20 Z"/>
+      <path d="M420,0 L442,0 L442,65 L420,65 Z M420,78 L442,78 L442,100 L420,100 Z"/>
+      <path d="M450,0 L470,0 L487,30 L505,0 L525,0 L500,50 L525,100 L505,100 L487,70 L470,100 L450,100 L474,50 Z"/>
+    </symbol>
+  </svg>
+
   <header class="nav">
     <a href="index.html" class="nav__logo" aria-label="Raytrix — Home">
-      <img src="assets/img/logo.svg" alt="RAYTR!X" />
+      <svg class="logo-mark logo-mark--nav" viewBox="0 0 525 100" aria-hidden="true"><use href="#raytrix-mark"/></svg>
     </a>
-    <nav class="nav__links" role="navigation" aria-label="Primary">
-      <a href="index.html" class="is-active">Home</a>
-      <a href="about.html">About</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="contact.html">Book</a>
-    </nav>
-    <a href="contact.html" class="nav__cta"><span class="dot"></span> Available for booking</a>
-    <button class="nav__burger" aria-label="Menu"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
+    <div class="nav__right">
+      <a href="contact.html" class="nav__pill">Book <span class="arr"></span></a>
+      <button class="nav__theme" aria-label="Switch to dark mode" title="Toggle theme">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="4.5"/>
+          <path d="M12 2.5v2.5M12 19v2.5M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M2.5 12H5M19 12h2.5M4.6 19.4l1.8-1.8M17.6 6.4l1.8-1.8"/>
+        </svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.8 6.8 0 0 0 10.5 10.5z"/>
+        </svg>
+      </button>
+      <button class="nav__menu" aria-label="Open menu">
+        <span class="label label-open">Menu</span>
+        <span class="label label-close">Close</span>
+        <span class="glyph" aria-hidden="true"></span>
+      </button>
+    </div>
   </header>
 
-  <!-- HERO -->
+  <!-- FULL-SCREEN MENU (Skrillex style) -->
+  <div class="menu-overlay" role="dialog" aria-modal="true" aria-label="Site menu">
+    <figure class="menu-overlay__photo">
+      <!-- TODO: swap for a real portrait shot -->
+      <div class="tile tile--n" style="--r: 3/4;">Portrait</div>
+      <figcaption class="menu-overlay__caption">
+        <span class="p">Raytrix · Live 2025</span>
+        <span>Vancouver</span>
+      </figcaption>
+    </figure>
+
+    <nav class="menu-overlay__nav">
+      <a href="index.html" class="menu-item is-active">
+        <span class="menu-item__num">I</span>
+        <span class="menu-item__label">Home</span>
+        <span class="menu-item__sub"></span>
+      </a>
+      <a href="about.html" class="menu-item">
+        <span class="menu-item__num">II</span>
+        <span class="menu-item__label">About</span>
+        <span class="menu-item__sub">The story</span>
+      </a>
+      <a href="gallery.html" class="menu-item">
+        <span class="menu-item__num">III</span>
+        <span class="menu-item__label">Gallery</span>
+        <span class="menu-item__sub">Photos &amp; video</span>
+      </a>
+      <a href="contact.html" class="menu-item">
+        <span class="menu-item__num">IV</span>
+        <span class="menu-item__label">Book</span>
+        <span class="menu-item__sub">Enquire now</span>
+      </a>
+    </nav>
+
+    <div class="menu-overlay__foot">
+      <span>Vancouver · Worldwide</span>
+      <div class="menu-overlay__socials">
+        <a href="https://www.instagram.com/raytrixofficial/" target="_blank" rel="noopener">Instagram</a>
+        <a href="mailto:raytrixofficial@gmail.com">Email</a>
+        <a href="tel:+17787231624">+1 778 723 1624</a>
+      </div>
+    </div>
+  </div>
+
+  <!--
+    HERO — video-first. Real deploy: uncomment the <video> below (with a
+    real assets/video/hero.mp4 + assets/img/hero-poster.jpg) and remove
+    the hero__video--placeholder class so the ambient gradient goes away.
+  -->
   <section class="hero">
-    <div class="hero__lead reveal-lines">
-      <span class="hero__eyebrow"><span class="status"></span> Vancouver · Available worldwide</span>
+    <div class="hero__video hero__video--placeholder" aria-hidden="true">
+      <!-- <video autoplay muted loop playsinline poster="assets/img/hero-poster.jpg"><source src="assets/video/hero.mp4" type="video/mp4"></video> -->
+    </div>
+    <div class="hero__scrim"></div>
 
-      <h1 class="hero__title">
-        <span class="row1">Sound with</span>
-        <span class="row2"><span class="swash">altitude</span>.</span>
-      </h1>
+    <h1 class="hero__mark"><svg class="logo-mark logo-mark--hero" viewBox="0 0 525 100" aria-label="RAYTR!X"><use href="#raytrix-mark"/></svg></h1>
 
-      <div class="hero__foot">
-        <p>A decade behind the decks — Bollywood, hip-hop, open format — from Mumbai's KITTY SU to the biggest stages in Vancouver.</p>
-        <a href="contact.html" class="btn">Book Raytrix <span class="arr"></span></a>
-      </div>
+    <button class="hero__play" data-video="assets/video/reel.mp4" aria-label="Play reel"></button>
+
+    <button class="hero__sound" aria-label="Unmute" title="Sound">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 9 h4 l5 -4 v14 l-5 -4 H4 z"/>
+        <line x1="16" y1="8" x2="21" y2="16"/>
+        <line x1="21" y1="8" x2="16" y2="16"/>
+      </svg>
+    </button>
+
+    <div class="hero__scroll" aria-hidden="true">
+      <span>Scroll</span>
+      <span class="line"></span>
     </div>
 
-    <div class="hero__media reveal">
-      <div class="hero__portrait">
-        <!-- TODO: replace with real hero portrait (portrait orientation, min 1200×1500) -->
-        <div class="tile tile--v" style="--r: 4/5; height: 100%; width: 100%;">Portrait</div>
+    <div class="hero__ticker">
+      <span class="live">Now booking · 2026</span>
+      <div class="cols">
+        <span>Vancouver, CA</span>
+        <span>+1 778 723 1624</span>
+        <span>raytrixofficial@gmail.com</span>
       </div>
-
-      <div class="badge-disc" aria-hidden="true">
-        <svg viewBox="0 0 200 200">
-          <defs>
-            <path id="circlePath" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0" />
-          </defs>
-          <text font-family="Space Grotesk, sans-serif" font-size="14" letter-spacing="4" fill="#fff" text-transform="uppercase">
-            <textPath href="#circlePath" startOffset="0">BOOKINGS OPEN · SPRING '26 · BOOKINGS OPEN · SPRING '26 · </textPath>
-          </text>
-        </svg>
-        <span class="pin">✳</span>
-      </div>
-    </div>
-
-    <span class="hero__scroll">Scroll <span class="down"></span></span>
-  </section>
-
-  <!-- MARQUEE 1 -->
-  <section class="marquee marquee--ink" aria-hidden="true">
-    <div class="marquee__track">
-      <span>Bollywood</span><span class="dot"></span>
-      <span>Hip-Hop</span><span class="dot"></span>
-      <span>Open Format</span><span class="dot"></span>
-      <span>Weddings</span><span class="dot"></span>
-      <span>Clubs</span><span class="dot"></span>
-      <span>Festivals</span><span class="dot"></span>
-      <span>Private Events</span><span class="dot"></span>
-      <span>Bollywood</span><span class="dot"></span>
-      <span>Hip-Hop</span><span class="dot"></span>
-      <span>Open Format</span><span class="dot"></span>
-      <span>Weddings</span><span class="dot"></span>
-      <span>Clubs</span><span class="dot"></span>
-      <span>Festivals</span><span class="dot"></span>
-      <span>Private Events</span><span class="dot"></span>
     </div>
   </section>
 
-  <!-- INTRO / SPLIT -->
-  <section class="section">
-    <div class="container">
-      <div class="split split--rev">
-        <div class="body reveal-lines">
-          <span class="eyebrow">Meet the artist</span>
-          <h2 class="h-md mt-1"><em>Sagar Gamre</em>. Raytrix on stage.</h2>
-          <p class="mt-2">Ten years in and Raytrix still reads a room like a first draft — from low-key and sophisticated to full-blown floor energy in a single set. He's won 12 DJ competitions along the way, held a six-year residency at Mumbai's legendary KITTY SU, and was ranked among the Top 100 DJs of India in 2019.</p>
-          <p>Today he calls Vancouver home, where he's become the city's most in-demand Bollywood DJ, and mentors the next generation at the Tabletutors DJ Community.</p>
-          <p class="mt-2"><a href="about.html" class="underlined-link">Read the full story →</a></p>
-        </div>
-        <div class="split__media reveal">
-          <!-- TODO: replace with a portrait or on-stage shot -->
-          <div class="tile tile--c" style="--r: 4/5; height:100%; width:100%">Portrait</div>
+  <!-- INTRO BLOCK — first content after the video hero -->
+  <section class="hero-intro">
+    <div class="hero-intro__grid reveal-lines">
+      <div>
+        <span class="eyebrow eyebrow--dot">Sagar Gamre · Raytrix</span>
+        <h2 class="hero-intro__title mt-3">Bollywood.<br>Hip-Hop.<br><span class="accent">Open Format.</span></h2>
+      </div>
+      <div>
+        <p class="hero-intro__meta">A decade behind the decks — from Mumbai's <strong>KITTY SU</strong> residency to headline sets across Europe, UAE and North America. Now Vancouver's most-booked Bollywood DJ, and touring worldwide.</p>
+        <div class="hero-intro__cta">
+          <a href="contact.html" class="btn">Book Raytrix <span class="arr"></span></a>
+          <a href="about.html" class="btn btn--ghost">Full story <span class="arr"></span></a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- STATS -->
-  <section class="section" style="padding-top:0;">
-    <div class="container">
-      <div class="stats reveal-lines">
-        <div><div class="num">10<span class="swash">+</span></div><span class="lbl">Years touring</span></div>
-        <div><div class="num">12</div><span class="lbl">DJ competitions won</span></div>
-        <div><div class="num">6<span class="swash">+</span></div><span class="lbl">Countries played</span></div>
-        <div><div class="num">100</div><span class="lbl">Top DJs of India · 2019</span></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- WHAT HE DOES -->
-  <section class="section section--paper">
-    <div class="container">
-      <div class="section__head reveal-lines">
-        <div><span class="eyebrow">Services</span><h2 class="h-lg mt-1">What he <em>does</em>.</h2></div>
-        <div class="lead"><p>Club nights, festivals, weddings and celebrity parties. Raytrix delivers a set that fits the room and lifts it a floor higher.</p></div>
-      </div>
-
-      <div class="feature-row reveal-lines">
-        <article>
-          <span class="num">01</span>
-          <h3>Clubs & Festivals</h3>
-          <p>Open-format, hip-hop, house and Bollywood — headline and support sets across India, UAE and Europe.</p>
-        </article>
-        <article>
-          <span class="num">02</span>
-          <h3>Weddings & Private</h3>
-          <p>Curated, multi-generational sets for South Asian weddings, sangeets, receptions and destination events.</p>
-        </article>
-        <article>
-          <span class="num">03</span>
-          <h3>Celebrity Events</h3>
-          <p>Trusted by Bollywood — from Salman Khan and Karan Johar to Anurag Kashyap and Neil Nitin Mukesh.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- MARQUEE 2 — VERMILLION -->
-  <section class="marquee marquee--vermillion marquee--reverse" aria-hidden="true">
+  <!-- MARQUEE -->
+  <section class="marquee" aria-hidden="true">
     <div class="marquee__track">
-      <span>Peggy Gou</span><span class="dot"></span>
-      <span>Nastia</span><span class="dot"></span>
-      <span>Martin Roth</span><span class="dot"></span>
-      <span>Thomas Gold</span><span class="dot"></span>
-      <span>EDX</span><span class="dot"></span>
-      <span>Danny Avila</span><span class="dot"></span>
-      <span>Tujamo</span><span class="dot"></span>
-      <span>Dirtcaps</span><span class="dot"></span>
-      <span>Tavi Castro</span><span class="dot"></span>
-      <span>Peggy Gou</span><span class="dot"></span>
-      <span>Nastia</span><span class="dot"></span>
-      <span>Martin Roth</span><span class="dot"></span>
-      <span>Thomas Gold</span><span class="dot"></span>
-      <span>EDX</span><span class="dot"></span>
-      <span>Danny Avila</span><span class="dot"></span>
-      <span>Tujamo</span><span class="dot"></span>
-      <span>Dirtcaps</span><span class="dot"></span>
-      <span>Tavi Castro</span><span class="dot"></span>
+      <span>Bollywood</span><span class="dot"></span><span>Hip-Hop</span><span class="dot"></span><span>Open Format</span><span class="dot"></span><span>Weddings</span><span class="dot"></span><span>Clubs</span><span class="dot"></span><span>Festivals</span><span class="dot"></span><span>Private Events</span><span class="dot"></span>
+      <span>Bollywood</span><span class="dot"></span><span>Hip-Hop</span><span class="dot"></span><span>Open Format</span><span class="dot"></span><span>Weddings</span><span class="dot"></span><span>Clubs</span><span class="dot"></span><span>Festivals</span><span class="dot"></span><span>Private Events</span><span class="dot"></span>
     </div>
   </section>
 
-  <!-- FEATURED REEL -->
+  <!-- FEATURED SHOW — the next big event -->
+  <section class="featured">
+    <div class="featured__grid reveal-lines">
+      <div class="featured__card">
+        <div>
+          <span class="featured__badge">Next Show</span>
+          <h2 class="featured__title">Raytrix Live @ KITTY SU Homecoming 2026</h2>
+          <p class="featured__caption">A one-night-only return to the club that made him a resident. New unreleased tracks, six-hour open format set, guest spots to be announced.</p>
+        </div>
+        <a href="contact.html" class="featured__cta">Get Tickets</a>
+      </div>
+      <div class="featured__media" data-video="assets/video/next-show.mp4">
+        <div class="tile tile--r" style="--r: 16/9;">Featured</div>
+        <button class="play-btn" aria-label="Play show trailer"></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATUS STRIP — one slim line, no duplication with Music / Tour Dates below -->
+  <section class="status-strip reveal">
+    <div class="container status-strip__row">
+      <a class="status-strip__item" href="contact.html">
+        <span class="eyebrow eyebrow--dot">Now booking</span>
+        <span class="status-strip__val">2026 season</span>
+      </a>
+      <a class="status-strip__item" href="gallery.html">
+        <span class="eyebrow">Residency</span>
+        <span class="status-strip__val">Fortune Sound · Every Friday</span>
+      </a>
+      <a class="status-strip__item" href="gallery.html">
+        <span class="eyebrow">New release</span>
+        <span class="status-strip__val">Vancouver Nights (Remix)</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- MUSIC -->
   <section class="section">
     <div class="container">
       <div class="section__head reveal-lines">
-        <div><span class="eyebrow">Watch</span><h2 class="h-lg mt-1">The <em>reel</em>.</h2></div>
-        <div class="lead"><p>A two-minute cut of live sets, crowds and the club floors he's owned. Click to play.</p></div>
+        <div>
+          <span class="eyebrow">Latest releases</span>
+          <h2 class="h-xl mt-1">Music</h2>
+        </div>
+        <a href="#" class="more">All releases</a>
       </div>
 
-      <!--
-        TODO: swap the <div class="tile"> poster for a real poster image:
-          <img src="assets/img/reel-poster.jpg" alt="Raytrix live reel">
-        Then point data-video (or data-youtube / data-vimeo) at the actual video.
-      -->
+      <!-- TODO: point each Listen link at the real Spotify/SoundCloud/Apple Music track -->
+      <div class="music-row reveal-lines">
+        <article class="music-card">
+          <div class="music-card__art"><div class="tile tile--r" style="--r: 1/1;">Cover</div></div>
+          <h3 class="music-card__title">Bombay Fire</h3>
+          <div class="music-card__meta">Raytrix · Original Mix · 2025</div>
+          <a href="#" class="music-card__listen">Listen</a>
+        </article>
+        <article class="music-card">
+          <div class="music-card__art"><div class="tile tile--b" style="--r: 1/1;">Cover</div></div>
+          <h3 class="music-card__title">Vancouver Nights</h3>
+          <div class="music-card__meta">Raytrix · Remix · 2025</div>
+          <a href="#" class="music-card__listen">Listen</a>
+        </article>
+        <article class="music-card">
+          <div class="music-card__art"><div class="tile tile--v" style="--r: 1/1;">Cover</div></div>
+          <h3 class="music-card__title">KITTY SU Sunrise</h3>
+          <div class="music-card__meta">Raytrix · Live Edit · 2024</div>
+          <a href="#" class="music-card__listen">Listen</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOUR DATES -->
+  <section class="section">
+    <div class="container">
+      <div class="section__head reveal-lines">
+        <div>
+          <span class="eyebrow">2026 Season</span>
+          <h2 class="h-xl mt-1">Tour Dates</h2>
+        </div>
+        <a href="contact.html" class="more">Add a date</a>
+      </div>
+
+      <div class="tour-list reveal-lines">
+        <div class="tour-row">
+          <span class="tour-row__date">Feb 14</span>
+          <span class="tour-row__city">Vancouver, CA</span>
+          <span class="tour-row__venue">Fortune Sound Club</span>
+          <a href="#" class="tour-row__cta">Tickets</a>
+        </div>
+        <div class="tour-row">
+          <span class="tour-row__date">Mar 08</span>
+          <span class="tour-row__city">Toronto, CA</span>
+          <span class="tour-row__venue">Rebel</span>
+          <a href="#" class="tour-row__cta">Tickets</a>
+        </div>
+        <div class="tour-row">
+          <span class="tour-row__date">Mar 22</span>
+          <span class="tour-row__city">Los Angeles, US</span>
+          <span class="tour-row__venue">Exchange LA</span>
+          <a href="#" class="tour-row__cta">Tickets</a>
+        </div>
+        <div class="tour-row">
+          <span class="tour-row__date">Apr 11</span>
+          <span class="tour-row__city">Mumbai, IN</span>
+          <span class="tour-row__venue">KITTY SU · Homecoming</span>
+          <a href="#" class="tour-row__cta">Tickets</a>
+        </div>
+        <div class="tour-row">
+          <span class="tour-row__date">Apr 26</span>
+          <span class="tour-row__city">Dubai, UAE</span>
+          <span class="tour-row__venue">WHITE Dubai</span>
+          <a href="#" class="tour-row__cta">Tickets</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REEL -->
+  <section class="section">
+    <div class="container">
+      <div class="section__head reveal-lines">
+        <div>
+          <span class="eyebrow">Watch</span>
+          <h2 class="h-xl mt-1">The Reel</h2>
+        </div>
+        <a href="gallery.html" class="more">Full gallery</a>
+      </div>
+
       <div class="reel reveal" data-video="assets/video/reel.mp4">
-        <div class="tile tile--n" style="--r: 16/9; height: 100%; width: 100%;">Reel</div>
+        <div class="tile tile--n" style="--r: 16/9; height:100%; width:100%;">Reel</div>
         <button class="play-btn" aria-label="Play reel"></button>
         <div class="reel__overlay">
           <div>
-            <div class="reel__title">Raytrix — Live 2025</div>
+            <div class="reel__title">Live 2025</div>
             <span class="reel__meta">02:14 · Highlights</span>
           </div>
           <span class="reel__meta">▶ Play</span>
@@ -204,82 +318,75 @@
   <!-- PERFORMANCE VIDEOS -->
   <section class="section" style="padding-top: 0;">
     <div class="container">
-      <div class="section__head reveal-lines">
-        <div><span class="eyebrow">Performances</span><h2 class="h-lg mt-1"><em>Selected</em> sets.</h2></div>
-        <div class="lead">
-          <p>Recent live recordings — click any card to open. Wire the real files to <code>data-video</code>, <code>data-youtube</code>, or <code>data-vimeo</code>.</p>
-        </div>
-      </div>
-
       <div class="video-grid reveal-lines">
-        <article class="video-card" data-youtube="REPLACE_WITH_YT_ID">
-          <div class="tile tile--v" style="--r: 4/5;">Video</div>
-          <button class="play-btn play-btn--sm" aria-label="Play"></button>
-          <div class="video-card__body">
-            <h3>Sunset Rooftop</h3>
-            <span class="meta">Live · Vancouver · 2025</span>
-          </div>
-        </article>
-        <article class="video-card" data-video="assets/video/wedding.mp4">
-          <div class="tile tile--c" style="--r: 4/5;">Video</div>
-          <button class="play-btn play-btn--sm" aria-label="Play"></button>
-          <div class="video-card__body">
-            <h3>Wedding Reception</h3>
-            <span class="meta">Live · Whistler · 2025</span>
-          </div>
-        </article>
-        <article class="video-card" data-video="assets/video/kittysu.mp4">
+        <article class="video-card">
           <div class="tile tile--n" style="--r: 4/5;">Video</div>
           <button class="play-btn play-btn--sm" aria-label="Play"></button>
-          <div class="video-card__body">
-            <h3>KITTY SU Throwback</h3>
-            <span class="meta">Live · Mumbai · 2022</span>
-          </div>
+          <div class="video-card__body"><h3>Sunset Rooftop</h3><span class="meta">Vancouver · 2025</span></div>
+        </article>
+        <article class="video-card" data-video="assets/video/wedding.mp4">
+          <div class="tile tile--r" style="--r: 4/5;">Video</div>
+          <button class="play-btn play-btn--sm" aria-label="Play"></button>
+          <div class="video-card__body"><h3>Wedding Reception</h3><span class="meta">Whistler · 2025</span></div>
+        </article>
+        <article class="video-card" data-video="assets/video/kittysu.mp4">
+          <div class="tile tile--b" style="--r: 4/5;">Video</div>
+          <button class="play-btn play-btn--sm" aria-label="Play"></button>
+          <div class="video-card__body"><h3>KITTY SU Throwback</h3><span class="meta">Mumbai · 2022</span></div>
         </article>
       </div>
-
-      <p class="mt-3 muted" style="text-align:center;">
-        <a href="gallery.html" class="underlined-link">See more in the gallery →</a>
-      </p>
     </div>
   </section>
 
-  <!-- MARQUEE 3 -->
-  <section class="marquee" aria-hidden="true">
+  <!-- ABOUT TEASER -->
+  <section class="section">
+    <div class="container">
+      <div class="split">
+        <div class="split__media reveal"><div class="tile tile--n" style="--r: 4/5;">Portrait</div></div>
+        <div class="body reveal-lines">
+          <span class="eyebrow">The Artist</span>
+          <h2 class="h-lg mt-1">Ten Years<br>Behind The Decks.</h2>
+          <p class="mt-2">Raytrix has spent a decade reading rooms and moving them — winning 12 DJ competitions, holding a six-year residency at Mumbai's legendary KITTY SU, and ranking among the Top 100 DJs of India in 2019.</p>
+          <p>Now based in Vancouver, he's the city's most in-demand Bollywood DJ, plays celebrity weddings across three continents, and mentors the next generation at Tabletutors.</p>
+          <p class="mt-3"><a href="about.html" class="btn btn--ghost">Full story <span class="arr"></span></a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="section section--tight">
+    <div class="container">
+      <div class="stats reveal-lines">
+        <div><div class="n">10<span class="accent">+</span></div><span class="l">Years touring</span></div>
+        <div><div class="n">12</div><span class="l">DJ competitions won</span></div>
+        <div><div class="n">6<span class="accent">+</span></div><span class="l">Countries played</span></div>
+        <div><div class="n">100</div><span class="l">Top DJs of India · 2019</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACT MARQUEE -->
+  <section class="marquee marquee--reverse" aria-hidden="true">
     <div class="marquee__track">
-      <span class="italic">Salman Khan</span><span class="dot"></span>
-      <span class="italic">Karan Johar</span><span class="dot"></span>
-      <span class="italic">Anurag Kashyap</span><span class="dot"></span>
-      <span class="italic">Neil Nitin Mukesh</span><span class="dot"></span>
-      <span class="italic">Kunal Khemu</span><span class="dot"></span>
-      <span class="italic">Raj Kundra</span><span class="dot"></span>
-      <span class="italic">Ayesha Jhulka</span><span class="dot"></span>
-      <span class="italic">Karan Wahi</span><span class="dot"></span>
-      <span class="italic">Salman Khan</span><span class="dot"></span>
-      <span class="italic">Karan Johar</span><span class="dot"></span>
-      <span class="italic">Anurag Kashyap</span><span class="dot"></span>
-      <span class="italic">Neil Nitin Mukesh</span><span class="dot"></span>
-      <span class="italic">Kunal Khemu</span><span class="dot"></span>
-      <span class="italic">Raj Kundra</span><span class="dot"></span>
-      <span class="italic">Ayesha Jhulka</span><span class="dot"></span>
-      <span class="italic">Karan Wahi</span><span class="dot"></span>
+      <span>Peggy Gou</span><span class="dot"></span><span>Nastia</span><span class="dot"></span><span>Martin Roth</span><span class="dot"></span><span>Thomas Gold</span><span class="dot"></span><span>EDX</span><span class="dot"></span><span>Danny Avila</span><span class="dot"></span><span>Tujamo</span><span class="dot"></span><span>Dirtcaps</span><span class="dot"></span><span>Tavi Castro</span><span class="dot"></span>
+      <span>Peggy Gou</span><span class="dot"></span><span>Nastia</span><span class="dot"></span><span>Martin Roth</span><span class="dot"></span><span>Thomas Gold</span><span class="dot"></span><span>EDX</span><span class="dot"></span><span>Danny Avila</span><span class="dot"></span><span>Tujamo</span><span class="dot"></span><span>Dirtcaps</span><span class="dot"></span><span>Tavi Castro</span><span class="dot"></span>
     </div>
   </section>
 
-  <!-- RIBBON CTA -->
-  <section class="ribbon">
-    <div class="container center reveal-lines">
-      <span class="eyebrow" style="color:var(--paper);">Bookings & enquiries</span>
-      <h2 class="mt-1">Let's make <span class="swash">noise</span>.</h2>
-      <p class="mt-2" style="color:rgba(247,243,233,0.7); max-width: 52ch; margin-left:auto; margin-right:auto;">Weddings, clubs, festivals, brand launches, private events — reach out and Raytrix's team gets back within 48 hours.</p>
-      <a href="contact.html" class="btn">Enquire now <span class="arr"></span></a>
+  <!-- CTA BLOCK -->
+  <section class="cta-block">
+    <div class="container reveal-lines">
+      <span class="eyebrow eyebrow--dot" style="justify-content:center;">Bookings open</span>
+      <h2 class="display mt-2">Book<br><span class="accent">Raytrix</span></h2>
+      <p class="body-lg mt-3" style="margin-inline:auto; text-align:center;">Weddings, clubs, festivals, brand launches, private events. Reply within 48 hours, seven days a week.</p>
+      <a href="contact.html" class="btn mt-3">Enquire now <span class="arr"></span></a>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer class="footer">
-    <div class="footer__super">RAYTR<span class="swash">!</span>X</div>
-
+    <div class="footer__super" aria-hidden="true"><svg class="logo-mark logo-mark--footer" viewBox="0 0 525 100"><use href="#raytrix-mark"/></svg></div>
     <div class="footer__grid">
       <div class="footer__intro">
         <h5>Raytrix (Sagar Gamre)</h5>
@@ -305,7 +412,6 @@
         <h5>Follow</h5>
         <ul>
           <li><a href="https://www.instagram.com/raytrixofficial/" target="_blank" rel="noopener">Instagram</a></li>
-          <!-- TODO: add SoundCloud / Spotify / Mixcloud / YouTube -->
         </ul>
       </div>
     </div>
@@ -316,6 +422,5 @@
   </footer>
 
   <script src="assets/js/main.js" defer></script>
-  <script>document.getElementById("yr").textContent = new Date().getFullYear();</script>
 </body>
 </html>
