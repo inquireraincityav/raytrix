@@ -44,15 +44,18 @@ Because it's fully static, host anywhere:
 
 ## Videos
 
-The site is built to lean heavily on video. Three delivery paths are supported, and any of them can be dropped in on the home page reel, the "Selected sets" grid, or the gallery:
+The site is built to lean heavily on video. Four delivery paths are supported, and any of them can be dropped in on the home page reel, the "Selected sets" grid, or the gallery:
 
 | Source | Attribute | Example |
 |--------|-----------|---------|
 | Self-hosted MP4 | `data-video="path.mp4"` | `data-video="assets/video/reel.mp4"` |
 | YouTube | `data-youtube="ID"` | `data-youtube="dQw4w9WgXcQ"` |
 | Vimeo | `data-vimeo="ID"` | `data-vimeo="76979871"` |
+| Instagram Reel | `data-instagram="URL"` | `data-instagram="https://www.instagram.com/reel/Cxxxxxxxxxx/"` |
 
 Any element with one of those attributes becomes clickable and opens the built-in lightbox player. Escape / backdrop-click / X closes it.
+
+Instagram Reels render via Instagram's own oEmbed widget (`embed.js`), loaded lazily the first time a Reel is opened — it needs normal internet access, so it only works once the site is actually deployed (not in a sandboxed preview). The lightbox automatically switches to a tall 9:16 frame for Instagram content.
 
 ### Where to drop files
 

@@ -810,6 +810,7 @@ body.menu-open .menu-overlay__photo { transform: none; opacity: 1; transition-de
 .lightbox { position: fixed; inset: 0; z-index: 200; background: rgba(0,0,0,0.94); backdrop-filter: blur(16px); display: none; align-items: center; justify-content: center; padding: clamp(20px, 5vw, 60px); opacity: 0; transition: opacity 0.35s var(--ease); }
 .lightbox.is-open { display: flex; opacity: 1; }
 .lightbox__frame { position: relative; width: min(1200px, 100%); aspect-ratio: 16/9; background: #000; border-radius: 12px; overflow: hidden; box-shadow: 0 40px 80px -20px rgba(0,0,0,0.7); transform: scale(0.96); transition: transform 0.4s var(--ease); border: 1px solid rgba(255,255,255,0.14); }
+.lightbox__frame--tall { width: min(420px, 90vw); aspect-ratio: 9/16; background: #fff; }
 .lightbox.is-open .lightbox__frame { transform: none; }
 .lightbox__frame video, .lightbox__frame iframe { width: 100%; height: 100%; border: none; display: block; }
 .lightbox__note { position: absolute; inset: 0; display: grid; place-items: center; color: rgba(255,255,255,0.6); font-size: 14px; text-align: center; padding: 40px; }

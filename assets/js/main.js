@@ -91,19 +91,45 @@
   closeBtn.addEventListener("click", closeLightbox);
   lb.addEventListener("click", (e) => { if (e.target === lb) closeLightbox(); });
 
+  // Instagram's oEmbed widget script — loaded once, lazily, only if a
+  // data-instagram trigger is actually clicked.
+  let igScriptPromise = null;
+  const loadInstagramEmbed = () => {
+    if (window.instgrm) return Promise.resolve();
+    if (igScriptPromise) return igScriptPromise;
+    igScriptPromise = new Promise((resolve, reject) => {
+      const s = document.createElement("script");
+      s.src = "https://www.instagram.com/embed.js";
+      s.async = true;
+      s.onload = resolve;
+      s.onerror = reject;
+      document.body.appendChild(s);
+    });
+    return igScriptPromise;
+  };
+
   document.addEventListener("click", (e) => {
-    const trigger = e.target.closest("[data-video], [data-youtube], [data-vimeo], .reel, .video-card, .featured__media, .gallery figure.is-video");
+    const trigger = e.target.closest("[data-video], [data-youtube], [data-vimeo], [data-instagram], .reel, .video-card, .featured__media, .gallery figure.is-video");
     if (!trigger) return;
     e.preventDefault();
     const src = trigger.dataset.video;
     const yt  = trigger.dataset.youtube;
     const vim = trigger.dataset.vimeo;
+    const ig  = trigger.dataset.instagram;
+    frame.classList.toggle("lightbox__frame--tall", !!ig);
     if (src) {
       openLightbox(`<video src="${src}" controls autoplay playsinline></video>`);
     } else if (yt) {
       openLightbox(`<iframe src="https://www.youtube.com/embed/${yt}?autoplay=1&rel=0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>`);
     } else if (vim) {
       openLightbox(`<iframe src="https://player.vimeo.com/video/${vim}?autoplay=1" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>`);
+    } else if (ig) {
+      openLightbox(
+        `<blockquote class="instagram-media" data-instgrm-permalink="${ig}" data-instgrm-version="14" style="margin:0; width:100%; height:100%;"></blockquote>`
+      );
+      loadInstagramEmbed()
+        .then(() => window.instgrm && window.instgrm.Embeds.process())
+        .catch(() => openLightbox('<div class="lightbox__note"><div><span class="big">Couldn\'t load Instagram</span>Open the reel directly: <a href="' + ig + '" target="_blank" rel="noopener" style="color:#fff;text-decoration:underline;">' + ig + "</a></div></div>"));
     } else {
       openLightbox(
         '<div class="lightbox__note"><div><span class="big">Video coming soon</span>' +
