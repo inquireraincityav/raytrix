@@ -1,13 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  Placeholder wordmark. Replace this file with the client's actual
-  RAYTR!X logo (SVG preferred, transparent PNG also fine — same filename).
+  RAYTR!X wordmark — SVG trace of the DJ logo.
+  Uses currentColor so the fill inherits from CSS: fill white on dark
+  backgrounds, or wrap the whole element in a coloured parent.
+  If the client can provide the master vector file later, drop it in as
+  logo.svg (same filename) — every reference in the site picks it up.
 -->
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 120" role="img" aria-label="RAYTR!X">
-  <style>
-    .r { font-family: "Anton", "Impact", "Helvetica Neue", Arial, sans-serif;
-         font-weight: 900; font-size: 108px; letter-spacing: -1px; fill: #0f0f10; }
-    .a { fill: #ff4a1c; }
-  </style>
-  <text x="0" y="96" class="r">RAYTR<tspan class="a">!</tspan>X</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 525 100" fill="currentColor" role="img" aria-label="RAYTR!X">
+  <!-- R -->
+  <path fill-rule="evenodd" d="M0,0 L55,0 L75,20 L75,40 L55,55 L75,100 L48,100 L28,65 L20,65 L20,100 L0,100 Z M20,20 L20,45 L47,45 L55,37 L55,28 L47,20 Z"/>
+  <!-- A -->
+  <path fill-rule="evenodd" d="M83,100 L113,0 L133,0 L163,100 L143,100 L138,82 L108,82 L103,100 Z M115,72 L131,72 L123,28 Z"/>
+  <!-- Y -->
+  <path d="M171,0 L191,0 L209,42 L226,0 L246,0 L219,58 L219,100 L199,100 L199,58 Z"/>
+  <!-- T -->
+  <path d="M254,0 L329,0 L329,20 L302,20 L302,100 L282,100 L282,20 L254,20 Z"/>
+  <!-- R -->
+  <path fill-rule="evenodd" d="M337,0 L392,0 L412,20 L412,40 L392,55 L412,100 L385,100 L365,65 L357,65 L357,100 L337,100 Z M357,20 L357,45 L384,45 L392,37 L392,28 L384,20 Z"/>
+  <!-- ! -->
+  <path d="M420,0 L442,0 L442,65 L420,65 Z M420,78 L442,78 L442,100 L420,100 Z"/>
+  <!-- X -->
+  <path d="M450,0 L470,0 L487,30 L505,0 L525,0 L500,50 L525,100 L505,100 L487,70 L470,100 L450,100 L474,50 Z"/>
 </svg>
