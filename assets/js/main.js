@@ -9,6 +9,22 @@
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
 
+  // -------- SLIDER (Reel / performance videos) --------
+  document.querySelectorAll(".slider").forEach((slider) => {
+    const slides = [...slider.querySelectorAll(".slider__slide")];
+    if (!slides.length) return;
+    const counter = slider.querySelector(".slider__counter-current");
+    let i = Math.max(0, slides.findIndex((s) => s.classList.contains("is-active")));
+    const show = (n) => {
+      slides[i].classList.remove("is-active");
+      i = (n + slides.length) % slides.length;
+      slides[i].classList.add("is-active");
+      if (counter) counter.textContent = String(i + 1).padStart(2, "0");
+    };
+    slider.querySelector(".slider__arrow--prev")?.addEventListener("click", () => show(i - 1));
+    slider.querySelector(".slider__arrow--next")?.addEventListener("click", () => show(i + 1));
+  });
+
   // -------- FULLSCREEN MENU --------
   const menuBtn = document.querySelector(".nav__menu");
   const menuOverlay = document.querySelector(".menu-overlay");
@@ -87,7 +103,7 @@
   };
 
   document.addEventListener("click", (e) => {
-    const trigger = e.target.closest("[data-video], [data-youtube], [data-vimeo], [data-instagram], .reel, .video-card, .featured__media, .gallery figure.is-video");
+    const trigger = e.target.closest("[data-video], [data-youtube], [data-vimeo], [data-instagram], .reel, .featured__media, .gallery figure.is-video");
     if (!trigger) return;
     e.preventDefault();
     const src = trigger.dataset.video;

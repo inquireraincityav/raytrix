@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>RAYTR!X — DJ / Producer / Instructor</title>
-  <meta name="description" content="Raytrix (Sagar Gamre) is an internationally-touring DJ and producer. Bollywood, hip-hop and open-format sets for clubs, festivals, weddings and celebrity events." />
+  <meta name="description" content="Raytrix is an internationally-touring DJ and producer. Bollywood, hip-hop and open-format sets for clubs, festivals, weddings and celebrity events." />
 
   <meta property="og:title" content="RAYTR!X — DJ / Producer / Instructor" />
   <meta property="og:description" content="Bollywood, hip-hop, open format. Vancouver-based, available worldwide." />
@@ -101,7 +101,7 @@
     </div>
     <div class="hero__scrim"></div>
 
-    <h1 class="sr-only">RAYTR!X — Sagar Gamre, DJ &amp; Producer</h1>
+    <h1 class="sr-only">RAYTR!X — DJ &amp; Producer</h1>
 
     <button class="hero__sound" aria-label="Unmute" title="Sound">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
@@ -130,8 +130,8 @@
   <section class="hero-intro">
     <div class="hero-intro__grid reveal-lines">
       <div class="hero-intro__stat">
-        <span class="eyebrow eyebrow--dot">Sagar Gamre · Raytrix</span>
-        <h2 class="hero-intro__title mt-3">10<span class="accent">+</span><span class="hero-intro__title-sub">Years behind the decks</span></h2>
+        <span class="eyebrow eyebrow--dot">Raytrix</span>
+        <h2 class="hero-intro__title mt-3"><span class="hero-intro__num">10<span class="accent">+</span></span><span class="hero-intro__title-sub">Years behind the decks</span></h2>
       </div>
       <div>
         <p class="hero-intro__meta">A decade behind the decks — from Mumbai's <strong>KITTY SU</strong> residency to headline sets across Europe, UAE and North America. Now Vancouver's most-booked Bollywood DJ, and touring worldwide.</p>
@@ -185,8 +185,9 @@
         <article class="music-card">
           <span class="music-card__num">01</span>
           <a href="#" class="music-card__art">
-            <div class="music-card__vinyl"></div>
-            <div class="music-card__cover"><div class="tile tile--r" style="--r: 1/1;">Cover</div></div>
+            <div class="music-card__disc">
+              <div class="music-card__label music-card__label--r"><span>Bombay Fire</span></div>
+            </div>
             <span class="music-card__play" aria-hidden="true"></span>
           </a>
           <h3 class="music-card__title">Bombay Fire</h3>
@@ -195,8 +196,9 @@
         <article class="music-card">
           <span class="music-card__num">02</span>
           <a href="#" class="music-card__art">
-            <div class="music-card__vinyl"></div>
-            <div class="music-card__cover"><div class="tile tile--b" style="--r: 1/1;">Cover</div></div>
+            <div class="music-card__disc">
+              <div class="music-card__label music-card__label--b"><span>Vancouver Nights</span></div>
+            </div>
             <span class="music-card__play" aria-hidden="true"></span>
           </a>
           <h3 class="music-card__title">Vancouver Nights</h3>
@@ -205,12 +207,24 @@
         <article class="music-card">
           <span class="music-card__num">03</span>
           <a href="#" class="music-card__art">
-            <div class="music-card__vinyl"></div>
-            <div class="music-card__cover"><div class="tile tile--v" style="--r: 1/1;">Cover</div></div>
+            <div class="music-card__disc">
+              <div class="music-card__label music-card__label--v"><span>Sunrise</span></div>
+            </div>
             <span class="music-card__play" aria-hidden="true"></span>
           </a>
           <h3 class="music-card__title">KITTY SU Sunrise</h3>
           <div class="music-card__meta">Raytrix · Live Edit · 2024</div>
+        </article>
+        <article class="music-card">
+          <span class="music-card__num">04</span>
+          <a href="#" class="music-card__art">
+            <div class="music-card__disc">
+              <div class="music-card__label music-card__label--n"><span>Marigold</span></div>
+            </div>
+            <span class="music-card__play" aria-hidden="true"></span>
+          </a>
+          <h3 class="music-card__title">Marigold</h3>
+          <div class="music-card__meta">Raytrix · Original Mix · 2024</div>
         </article>
       </div>
     </div>
@@ -273,55 +287,56 @@
         <a href="gallery.html" class="more">Full gallery</a>
       </div>
 
-      <div class="reel reveal" data-video="assets/video/reel.mp4">
-        <div class="tile tile--n" style="--r: 16/9; height:100%; width:100%;">Reel</div>
-        <button class="play-btn" aria-label="Play reel"></button>
-        <div class="reel__overlay">
-          <div>
-            <div class="reel__title">Live 2025</div>
-            <span class="reel__meta">02:14 · Highlights</span>
+      <div class="slider reveal">
+        <div class="slider__track">
+          <div class="reel slider__slide is-active" data-video="assets/video/reel.mp4">
+            <div class="tile tile--n" style="--r: 16/9; height:100%; width:100%;">Reel</div>
+            <button class="play-btn" aria-label="Play"></button>
+            <div class="reel__overlay">
+              <div>
+                <div class="reel__title">Live 2025</div>
+                <span class="reel__meta">02:14 · Highlights</span>
+              </div>
+            </div>
           </div>
-          <span class="reel__meta">▶ Play</span>
+          <div class="reel slider__slide">
+            <div class="tile tile--n" style="--r: 16/9; height:100%; width:100%;">Video</div>
+            <button class="play-btn" aria-label="Play"></button>
+            <div class="reel__overlay">
+              <div>
+                <div class="reel__title">Sunset Rooftop</div>
+                <span class="reel__meta">Vancouver · 2025</span>
+              </div>
+            </div>
+          </div>
+          <div class="reel slider__slide" data-video="assets/video/wedding.mp4">
+            <div class="tile tile--r" style="--r: 16/9; height:100%; width:100%;">Video</div>
+            <button class="play-btn" aria-label="Play"></button>
+            <div class="reel__overlay">
+              <div>
+                <div class="reel__title">Wedding Reception</div>
+                <span class="reel__meta">Whistler · 2025</span>
+              </div>
+            </div>
+          </div>
+          <div class="reel slider__slide" data-video="assets/video/kittysu.mp4">
+            <div class="tile tile--b" style="--r: 16/9; height:100%; width:100%;">Video</div>
+            <button class="play-btn" aria-label="Play"></button>
+            <div class="reel__overlay">
+              <div>
+                <div class="reel__title">KITTY SU Throwback</div>
+                <span class="reel__meta">Mumbai · 2022</span>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PERFORMANCE VIDEOS -->
-  <section class="section" style="padding-top: 0;">
-    <div class="container">
-      <div class="video-grid reveal-lines">
-        <article class="video-card">
-          <div class="tile tile--n" style="--r: 4/5;">Video</div>
-          <button class="play-btn play-btn--sm" aria-label="Play"></button>
-          <div class="video-card__body"><h3>Sunset Rooftop</h3><span class="meta">Vancouver · 2025</span></div>
-        </article>
-        <article class="video-card" data-video="assets/video/wedding.mp4">
-          <div class="tile tile--r" style="--r: 4/5;">Video</div>
-          <button class="play-btn play-btn--sm" aria-label="Play"></button>
-          <div class="video-card__body"><h3>Wedding Reception</h3><span class="meta">Whistler · 2025</span></div>
-        </article>
-        <article class="video-card" data-video="assets/video/kittysu.mp4">
-          <div class="tile tile--b" style="--r: 4/5;">Video</div>
-          <button class="play-btn play-btn--sm" aria-label="Play"></button>
-          <div class="video-card__body"><h3>KITTY SU Throwback</h3><span class="meta">Mumbai · 2022</span></div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ABOUT TEASER -->
-  <section class="section">
-    <div class="container">
-      <div class="split">
-        <div class="split__media reveal"><div class="tile tile--n" style="--r: 4/5;">Portrait</div></div>
-        <div class="body reveal-lines">
-          <span class="eyebrow">The Artist</span>
-          <h2 class="h-lg mt-1">Ten Years<br>Behind The Decks.</h2>
-          <p class="mt-2">Raytrix has spent a decade reading rooms and moving them — winning 12 DJ competitions, holding a six-year residency at Mumbai's legendary KITTY SU, and ranking among the Top 100 DJs of India in 2019.</p>
-          <p>Now based in Vancouver, he's the city's most in-demand Bollywood DJ, plays celebrity weddings across three continents, and mentors the next generation at Tabletutors.</p>
-          <p class="mt-3"><a href="about.html" class="btn btn--ghost">Full story <span class="arr"></span></a></p>
-        </div>
+        <button class="slider__arrow slider__arrow--prev" aria-label="Previous video">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6 L9 12 L15 18"/></svg>
+        </button>
+        <button class="slider__arrow slider__arrow--next" aria-label="Next video">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6 L15 12 L9 18"/></svg>
+        </button>
+        <div class="slider__counter"><span class="slider__counter-current">01</span> / 04</div>
       </div>
     </div>
   </section>
@@ -361,7 +376,7 @@
     <div class="footer__super" aria-hidden="true"><svg class="logo-mark logo-mark--footer" viewBox="0 0 525 100"><use href="#raytrix-mark"/></svg></div>
     <div class="footer__grid">
       <div class="footer__intro">
-        <h5>Raytrix (Sagar Gamre)</h5>
+        <h5>Raytrix</h5>
         <p>Vancouver-based DJ, producer and instructor. Bollywood, hip-hop, open format — available worldwide.</p>
       </div>
       <div>
